@@ -11,7 +11,11 @@ type Props = {
 const Anchor = ({ url, label, className = '' }: Props) => {
   console.log(label, className)
   return (
-    <Link to={url} activeClassName={cn('underline text-primary')}>
+    <Link
+      to={url}
+      activeClassName={cn('underline text-primary')}
+      partiallyActive
+    >
       <h2 className={className}>{label} </h2>
     </Link>
   )

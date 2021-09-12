@@ -14,12 +14,12 @@ export const PageTemplate = ({ data }: Props) => {
   const page = pageResolver(data.prismicPage)
 
   return (
-    <section>
+    <div className='page'>
       <h1>{page.uid}</h1>
-      {page.body.map(slice => (
-        <SliceZone slice={slice} />
+      {page.body.map((slice, key) => (
+        <SliceZone key={key} slice={slice} />
       ))}
-    </section>
+    </div>
   )
 }
 
