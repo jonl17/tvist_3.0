@@ -1,0 +1,61 @@
+@keyframes exIn {
+  from {
+    stroke-width: 0px;
+    transform: scale(0.75) rotate(15deg);
+    stroke: $dark-gray-100;
+  }
+  to {
+    stroke-width: 2px;
+    transform: scale(1) rotate(0deg);
+    stroke: $dark-gray-400;
+  }
+}
+
+@keyframes burgerIn {
+  from {
+    stroke-width: 0px;
+    transform: scale(0.75) rotate(-5eg);
+    stroke: $dark-gray-100;
+  }
+  to {
+    stroke-width: 2px;
+    transform: scale(1) rotate(0deg);
+    stroke: $dark-gray-400;
+  }
+}
+
+.burger {
+  // border: 1px solid red;
+  height: 25px;
+  width: 25px;
+  position: relative;
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    path {
+      stroke-width: 2px;
+      stroke: $black;
+      transform-origin: 50% 50%;
+    }
+  }
+
+  path {
+    stroke: $black;
+  }
+}
+
+.burger__ex {
+  path {
+    animation: exIn 0.2s forwards;
+  }
+}
+.burger__burger {
+  path {
+    animation: burgerIn 0.2s forwards;
+  }
+}

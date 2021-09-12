@@ -1,0 +1,34 @@
+{
+  "Main": {
+    "name": {
+      "type": "Text",
+      "config": {
+        "label": "Name",
+        "placeholder": "Main menu"
+      }
+    },
+    "pages": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "page": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": ["page"],
+              "label": "Page"
+            }
+          },
+          "label": {
+            "type": "Text",
+            "config": {
+              "label": "Label",
+              "placeholder": "Um okkur"
+            }
+          }
+        },
+        "label": "Pages"
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'national-2';
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+    src: url('../styles/assets/fonts/National2/condensed-regular.otf')
+      format('opentype');
+  }
+  @font-face {
+    font-family: 'national-2';
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: local('National'),
+      url('../styles/assets/fonts/National2/condensed-bold.otf')
+        format('opentype');
+  }
+  @font-face {
+    font-family: 'national-2';
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    src: local('National'),
+      url('../styles/assets/fonts/National2/semibold.otf') format('opentype');
+  }
+  h1,
+  h2 {
+    @apply font-national2;
+    @apply uppercase;
+    @apply font-bold;
+    @apply text-primary;
+    @apply mb-1;
+  }
+  h1 {
+    @apply text-hdln2;
+    @apply desktop:text-hdln1;
+  }
+  h2 {
+    @apply text-hdln4;
+    @apply desktop:text-hdln3;
+  }
+  p,
+  a,
+  span,
+  li {
+    @apply text-parag3;
+    @apply desktop:text-parag2;
+    @apply font-semibold;
+    @apply mb-1;
+  }
+
+  a {
+    @apply cursor-pointer;
+  }
+  a:hover {
+    @apply opacity-75;
+  }
+}
+
+@layer utilities {
+  .parag-large {
+    @apply text-parag2;
+    @apply desktop:text-parag1;
+  }
+
+  .burger-path {
+    stroke-width: 3px;
+    @apply stroke-current;
+    @apply text-primary;
+    transform-origin: 50% 50%;
+  }
+
+  .svg-ghost > path {
+    @apply fill-current;
+    @apply text-white;
+  }
+}
