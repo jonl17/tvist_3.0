@@ -1,7 +1,9 @@
+const slugify = require('slugify')
+
 const linkResolver = doc => {
   // URL for a category type
   if (doc.type === 'project') {
-    return `/verkefni/${doc.uid}`
+    return `/verkefni/${slugify(doc.uid)}`
   }
 
   // URL for a page type

@@ -11,6 +11,33 @@
       "config": {
         "label": "Title"
       }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": null,
+        "choices": {
+          "projects": {
+            "type": "Slice",
+            "fieldset": "Projects",
+            "description": "Yfirlit verkefna",
+            "icon": "accessibility",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "project": {
+                "type": "Link",
+                "config": {
+                  "select": "document",
+                  "customtypes": ["project"],
+                  "label": "Project"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

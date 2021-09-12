@@ -27,5 +27,7 @@ module.exports = {
         extensions: [`ts`, `tsx`],
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
   ],
 }
