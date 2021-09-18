@@ -2,8 +2,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import '@data/fragments/project.ts'
 import { projectResolver } from '@src/data/resolvers'
-import { linkResolver } from '@root/cms/utils/linkResolver'
-import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 
 type Props = {
   data: any
@@ -32,9 +30,4 @@ export const query = graphql`
   }
 `
 
-export default withPrismicPreview(ProjectTemplate, [
-  {
-    repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME ?? '',
-    linkResolver,
-  },
-])
+export default ProjectTemplate
