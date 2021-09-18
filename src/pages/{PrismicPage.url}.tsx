@@ -8,8 +8,8 @@ type Props = {
   data: any
 }
 
-export const PageTemplate = ({ data }: Props) => {
-  console.log('from page template: ', data.prismicPage.url)
+export const PageTemplate = ({ data, isPreview, isLoading }: Props) => {
+  console.log('from page template: ', isPreview, isLoading)
   if (!data) return null
 
   const page = pageResolver(data.prismicPage)
