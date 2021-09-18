@@ -2,9 +2,9 @@ module.exports = {
   purge: ['./src/**/*.tsx', './pages/**/*.tsx'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    // fontFamily: {
-    //   national2: ['national-2', 'sans-serif'],
-    // },
+    fontFamily: {
+      national2: ['national-2', 'sans-serif'],
+    },
     fontSize: {
       hdln1: ['50px', '57.1px'],
       hdln2: ['30px', '34.26px'],

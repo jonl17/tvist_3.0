@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  /* @font-face {
+  @font-face {
     font-family: 'national-2';
     font-weight: 500;
     font-style: normal;
@@ -27,10 +27,10 @@
     font-display: swap;
     src: local('National'),
       url('../styles/assets/fonts/National2/semibold.otf') format('opentype');
-  } */
+  }
   h1,
   h2 {
-    /* @apply font-national2; */
+    @apply font-national2;
     @apply uppercase;
     @apply font-bold;
     @apply text-primary;
