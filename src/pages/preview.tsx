@@ -13,8 +13,6 @@ const PreviewPage = props => {
   )
 }
 
-console.log('REEEEEEPOOOO NAME: ', process.env.GATSBY_PRISMIC_REPO_NAME)
-
 export default withPrismicPreviewResolver(PreviewPage, [
   {
     repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME ?? '',
