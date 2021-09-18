@@ -4,12 +4,6 @@ import { withPrismicPreviewResolver } from 'gatsby-plugin-prismic-previews'
 // Update the path to your Link Resolver
 import { linkResolver } from '@root/cms/utils/linkResolver'
 
-import { config } from 'dotenv'
-
-config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
 const PreviewPage = props => {
   console.log(props)
   return (
