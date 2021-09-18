@@ -11,10 +11,11 @@ const Projects = ({ projects }: ProjectsProps) => {
   return (
     <div>
       {projects.map((p, i) => (
-        <Link to={p.url}>
-          <div className='h-52 w-52'>
-            <img src={p.featuredImage.url} />
-          </div>
+        <Link className='h-52 w-52' to={p.url}>
+          <img
+            className='w-full h-full object-cover'
+            src={p.featuredImage.url}
+          />
         </Link>
       ))}
     </div>
