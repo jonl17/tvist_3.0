@@ -9,6 +9,7 @@ type Props = {
 }
 
 export const PageTemplate = ({ data }: Props) => {
+  console.log('from page template: ', data)
   if (!data) return null
 
   const page = pageResolver(data.prismicPage)
