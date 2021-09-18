@@ -4,7 +4,8 @@ import { withPrismicPreviewResolver } from 'gatsby-plugin-prismic-previews'
 // Update the path to your Link Resolver
 import { linkResolver } from '@root/cms/utils/linkResolver'
 
-const PreviewPage = () => {
+const PreviewPage = props => {
+  console.log(props)
   return (
     <div>
       <h1>Loading preview…</h1>
