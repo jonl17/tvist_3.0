@@ -2,12 +2,12 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-const { PRISMIC_REPO_NAME, PRISMIC_ACCESS_TOKEN } = process.env
+const { GATSBY_PRISMIC_REPO_NAME, PRISMIC_ACCESS_TOKEN } = process.env
 
 const gatsbySourcePrismic = {
   resolve: 'gatsby-source-prismic',
   options: {
-    repositoryName: PRISMIC_REPO_NAME,
+    repositoryName: GATSBY_PRISMIC_REPO_NAME,
     accessToken: PRISMIC_ACCESS_TOKEN,
     schemas: {
       page: require('./schemas/page.json'),
@@ -18,6 +18,14 @@ const gatsbySourcePrismic = {
   },
 }
 
+const gatsbyPrismicPreviews = {
+  resolve: 'gatsby-plugin-prismic-previews',
+  options: {
+    repositoryName: GATSBY_PRISMIC_REPO_NAME,
+  },
+}
+
 module.exports = {
   gatsbySourcePrismic,
+  gatsbyPrismicPreviews,
 }

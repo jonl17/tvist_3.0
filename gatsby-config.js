@@ -1,11 +1,15 @@
 const path = require('path')
-const { gatsbySourcePrismic } = require('./cms/prismic-config')
+const {
+  gatsbySourcePrismic,
+  gatsbyPrismicPreviews,
+} = require('./cms/prismic-config')
 
 module.exports = {
   /* Your site config here */
   plugins: [
     'gatsby-plugin-typescript',
     gatsbySourcePrismic,
+    gatsbyPrismicPreviews,
     'gatsby-plugin-postcss',
     {
       resolve: `gatsby-plugin-layout`,
@@ -29,5 +33,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    'gatsby-plugin-gatsby-cloud',
   ],
 }

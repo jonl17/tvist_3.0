@@ -3,6 +3,8 @@ import { graphql } from 'gatsby'
 import '@data/fragments/page.ts'
 import SliceZone from '@cmp/slices/sliceZone'
 import { pageResolver } from '@src/data/resolvers'
+import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
+import { linkResolver } from '@root/cms/utils/linkResolver'
 
 type Props = {
   data: any
@@ -26,9 +28,15 @@ export const PageTemplate = ({ data }: Props) => {
 export const query = graphql`
   query PageQuery($id: String) {
     prismicPage(id: { eq: $id }) {
+      _previewable
       ...pageFragment
     }
   }
 `
 
-export default PageTemplate
+export default withPrismicPreview(PageTemplate, [
+  {
+    repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME ?? '',
+    linkResolver,
+  },
+])
