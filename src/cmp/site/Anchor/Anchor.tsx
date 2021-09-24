@@ -9,7 +9,6 @@ type Props = {
 }
 
 const Anchor = ({ url, label, className = '' }: Props) => {
-  console.log(label, className)
   return (
     <Link
       to={url}

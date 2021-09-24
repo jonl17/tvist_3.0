@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import '@data/fragments/project.ts'
 import { projectResolver } from '@src/data/resolvers'
+import ProjectHead from '@src/cmp/site/ProjectHead'
 
 type Props = {
   data: any
@@ -13,10 +14,7 @@ export const ProjectTemplate = ({ data }: Props) => {
 
   return (
     <div className='project'>
-      <div className='p-6 desktop:p-12 max-w-4xl'>
-        <h1 className='mb-6'>{project.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: project.excerpt.html }} />
-      </div>
+      <ProjectHead {...project} />
     </div>
   )
 }

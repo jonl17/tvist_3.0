@@ -28,7 +28,7 @@ const Menu = ({ pages = [] }: MenuProps) => {
             close={closeMobileMenu}
           />
         </div>
-        <div className='hidden desktop:flex'>
+        <div className='hidden desktop:flex banner-item-width'>
           {pages.map((page, i) => (
             <Anchor
               key={i}

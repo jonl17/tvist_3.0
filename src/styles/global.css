@@ -79,4 +79,13 @@
     @apply fill-current;
     @apply text-white;
   }
+
+  .pad {
+    @apply px-6;
+    @apply desktop:px-12;
+  }
+
+  .banner-item-width {
+    width: 500px;
+  }
 }
