@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import cn from 'classnames'
 
 type Props = {
   url: string
@@ -10,12 +9,8 @@ type Props = {
 
 const Anchor = ({ url, label, className = '' }: Props) => {
   return (
-    <Link
-      to={url}
-      activeClassName={cn('underline text-primary')}
-      partiallyActive
-    >
-      <h2 className={className}>{label} </h2>
+    <Link activeClassName='anchor-active' partiallyActive to={url}>
+      <h2 className={className}>{label}</h2>
     </Link>
   )
 }

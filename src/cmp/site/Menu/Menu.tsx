@@ -9,20 +9,29 @@ type MenuProps = {
     url: string
     label: string
   }[]
+  theme: 'ghost' | 'primary'
 }
 
-const Menu = ({ pages = [] }: MenuProps) => {
+const Menu = ({ pages = [], theme = 'primary' }: MenuProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const openMobileMenu = () => setMobileMenuOpen(true)
   const closeMobileMenu = () => setMobileMenuOpen(false)
 
   return (
-    <div className='px-6 desktop:px-12 h-28 flex items-center justify-between'>
-      <Logo />
+    <div
+      className={cn(
+        'px-6 desktop:px-12 h-28 flex items-center justify-between',
+        {
+          'bg-primary': theme === 'primary',
+        }
+      )}
+    >
+      <Logo ghost={theme === 'primary'} />
       <div>
         <div className='block desktop:hidden'>
           <Burger
+            ghost={theme === 'primary'}
             isOpen={mobileMenuOpen}
             open={openMobileMenu}
             close={closeMobileMenu}
@@ -32,7 +41,10 @@ const Menu = ({ pages = [] }: MenuProps) => {
           {pages.map((page, i) => (
             <Anchor
               key={i}
-              className={cn({ 'mr-6': i !== pages.length - 1 })}
+              className={cn({
+                'mr-6': i !== pages.length - 1,
+                'text-white': theme === 'primary',
+              })}
               {...page}
             />
           ))}

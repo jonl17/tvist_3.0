@@ -33,7 +33,7 @@ const ProjectHead = ({
   tags,
 }: Props) => {
   return (
-    <div className='bg-primary pad py-10 flex justify-between'>
+    <div className='bg-primary pad py-12 flex justify-between'>
       <div className='desktop:w-1/3'>
         <h1 className='text-white mb-5'>{title}</h1>
         <div className='w-96 desktop:hidden mb-5'>

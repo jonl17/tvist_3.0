@@ -13,7 +13,7 @@ const QuestionAnswer = ({ question, answer, className = '' }: Props) => {
       <p className='text-white text-parag3 mr-2 whitespace-nowrap'>
         {question + ':'}
       </p>
-      <p className='text-white text-opacity-75 text-parag3'>{answer}</p>
+      <p className='text-primary-light text-parag3'>{answer}</p>
     </div>
   )
 }

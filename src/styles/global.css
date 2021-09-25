@@ -70,8 +70,6 @@
 
   .burger-path {
     stroke-width: 3px;
-    @apply stroke-current;
-    @apply text-primary;
     transform-origin: 50% 50%;
   }
 
@@ -87,5 +85,9 @@
 
   .banner-item-width {
     width: 500px;
+  }
+
+  .anchor-active > * {
+    @apply text-primary-light;
   }
 }
