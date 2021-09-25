@@ -90,4 +90,11 @@
   .anchor-active > * {
     @apply text-primary-light;
   }
+
+  .image-short {
+    height: 500px;
+  }
+  .image-tall {
+    height: 628px;
+  }
 }

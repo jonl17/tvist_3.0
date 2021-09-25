@@ -1,6 +1,7 @@
 import React from 'react'
 import Projects from '@cmp/slices/Projects'
 import { projectResolver } from '@src/data/resolvers'
+import { isTemplateTail } from 'typescript'
 
 type Props = {
   slice: any
@@ -15,9 +16,11 @@ const SliceZone = ({ slice }: Props) => {
     switch (sliceType) {
       case 'projects':
         return {
-          projects: slice.items.map((item: any) =>
-            projectResolver(item.project.document)
-          ),
+          projects: slice.items.map((item: any) => ({
+            tall: item.tall,
+            wide: item.wide,
+            ...projectResolver(item.project.document),
+          })),
         }
     }
   }

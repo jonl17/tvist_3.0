@@ -33,6 +33,20 @@
                   "customtypes": ["project"],
                   "label": "Project"
                 }
+              },
+              "tall": {
+                "type": "Boolean",
+                "config": {
+                  "default_value": false,
+                  "label": "tall"
+                }
+              },
+              "wide": {
+                "type": "Boolean",
+                "config": {
+                  "default_value": false,
+                  "label": "wide"
+                }
               }
             }
           }

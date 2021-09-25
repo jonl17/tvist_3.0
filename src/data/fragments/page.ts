@@ -20,6 +20,8 @@ export const fragment = graphql`
     id
     slice_type
     items {
+      tall
+      wide
       project {
         document {
           ...projectFragment

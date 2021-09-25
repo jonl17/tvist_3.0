@@ -21,8 +21,7 @@ export const PageTemplate = ({ data }: Props) => {
   }, [])
 
   return (
-    <div className='page'>
-      <h1>{page.uid}</h1>
+    <div className='page pad'>
       {page.body.map((slice, key) => (
         <SliceZone key={key} slice={slice} />
       ))}
