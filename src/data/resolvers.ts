@@ -1,3 +1,5 @@
+import { FluidObject } from 'gatsby-image'
+
 export interface MenuInterface {
   label: string
   url: string
@@ -34,6 +36,7 @@ export interface ProjectInterface {
   featuredImage: {
     url: string
     alt: string
+    fluid: FluidObject
   }
 }
 
