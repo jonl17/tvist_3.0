@@ -92,9 +92,9 @@
   }
 
   .image-short {
-    height: 500px;
+    height: 50vh;
   }
   .image-tall {
-    height: 628px;
+    height: 60vh;
   }
 }
