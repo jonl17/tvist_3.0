@@ -30,15 +30,15 @@ const ProjectHead = ({ title, excerpt, client, tags }: Props) => {
   const [loaded, setLoaded] = useState(false)
   useEffect(() => setLoaded(true), [])
   return (
-    <div className='bg-primary pad py-6 desktop:py-12 flex justify-between'>
+    <div className='bg-primary pad py-6 desktop:py-12 flex justify-between animate-slideIn'>
       <div className='desktop:w-1/3'>
-        <Fade when={loaded} distance='10px' down duration={250}>
+        <Fade when={loaded} distance='10px' delay={500} left duration={250}>
           <h1 className='text-white mb-5'>{title}</h1>
         </Fade>
         <div className='w-96 desktop:hidden mb-5'>
           <MetaBox client={client} tags={tags} />
         </div>
-        <Fade when={loaded} distance='10px' down delay={250} duration={250}>
+        <Fade when={loaded} distance='10px' left delay={750} duration={250}>
           <div
             className='text-white'
             dangerouslySetInnerHTML={{ __html: excerpt.html }}
@@ -46,7 +46,9 @@ const ProjectHead = ({ title, excerpt, client, tags }: Props) => {
         </Fade>
       </div>
       <div className='banner-item-width hidden desktop:block'>
-        <MetaBox client={client} tags={tags} />
+        <Fade when={loaded} right distance='10px' delay={500}>
+          <MetaBox client={client} tags={tags} />
+        </Fade>
       </div>
     </div>
   )

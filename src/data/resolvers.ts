@@ -50,6 +50,7 @@ export interface ProjectInterface {
     alt: string
     fluid: FluidObject
   }
+  body: any[]
 }
 
 export const projectResolver = (node: any): ProjectInterface => ({
@@ -60,6 +61,7 @@ export const projectResolver = (node: any): ProjectInterface => ({
   excerpt: node.data.excerpt,
   client: node.data.client,
   featuredImage: node.data.featured_image,
+  body: node.data.body,
 })
 
 export interface ContactInterface {

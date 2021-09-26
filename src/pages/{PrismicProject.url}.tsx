@@ -6,6 +6,7 @@ import ProjectHead from '@src/cmp/site/ProjectHead'
 import { useTheme } from '@src/context/theme'
 import Img from 'gatsby-image'
 import { Fade } from 'react-reveal'
+import SliceZone from '@cmp/slices/sliceZone'
 
 type Props = {
   data: any
@@ -31,6 +32,8 @@ export const ProjectTemplate = ({ data }: Props) => {
           <Img fluid={project.featuredImage.fluid} />
         </div>
       </Fade>
+      {project.body &&
+        project.body.map((slice, key) => <SliceZone key={key} slice={slice} />)}
     </div>
   )
 }

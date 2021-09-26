@@ -35,7 +35,17 @@ module.exports = {
       desktop: '1080px',
       // => @media (min-width: 1280px) { ... }
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        slideIn: {
+          from: { transform: 'translate3d(0,-100%,0)' },
+          to: { transform: 'translate3d(0,0%,0)' },
+        },
+      },
+    },
+    animation: {
+      slideIn: 'slideIn 0.2s ease-in-out forwards',
+    },
   },
   variants: {
     extend: {},

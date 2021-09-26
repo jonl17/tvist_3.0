@@ -1,7 +1,6 @@
 import React from 'react'
 import Projects from '@cmp/slices/Projects'
 import { projectResolver } from '@src/data/resolvers'
-import { isTemplateTail } from 'typescript'
 
 type Props = {
   slice: any
