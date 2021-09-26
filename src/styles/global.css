@@ -4,7 +4,7 @@
 
 @layer base {
   @font-face {
-    font-family: 'national-2';
+    font-family: 'national-2-eyelash';
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -12,7 +12,7 @@
       format('opentype');
   }
   @font-face {
-    font-family: 'national-2';
+    font-family: 'national-2-heading';
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -21,16 +21,15 @@
         format('opentype');
   }
   @font-face {
-    font-family: 'national-2';
-    font-weight: 600;
-    font-style: normal;
+    font-family: 'national-2-paragraph';
+    font-weight: 300;
     font-display: swap;
     src: local('National'),
-      url('../styles/assets/fonts/National2/semibold.otf') format('opentype');
+      url('../styles/assets/fonts/National2/regular.otf') format('opentype');
   }
   h1,
   h2 {
-    @apply font-national2;
+    @apply font-national2_heading;
     @apply uppercase;
     @apply font-bold;
     @apply text-primary;
@@ -48,6 +47,7 @@
   a,
   span,
   li {
+    @apply font-national2_paragraph;
     @apply text-parag3;
     @apply desktop:text-parag2;
     @apply font-normal;
@@ -67,6 +67,12 @@
 }
 
 @layer utilities {
+  .parag-number {
+    @apply font-national2_eyelash;
+    @apply text-parag3;
+    @apply font-medium;
+  }
+
   .parag-large {
     @apply text-parag2;
     @apply desktop:text-parag1;

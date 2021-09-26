@@ -3,7 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      national2: ['national-2', 'sans-serif'],
+      national2_heading: ['national-2-heading', 'sans-serif'],
+      national2_paragraph: ['national-2-paragraph', 'sans-serif'],
+      national2_eyelash: ['national-2-eyelash', 'sans-serif'],
     },
     fontSize: {
       hdln1: ['50px', '57.1px'],

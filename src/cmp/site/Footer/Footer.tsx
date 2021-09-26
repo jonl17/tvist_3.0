@@ -12,7 +12,13 @@ const Footer = () => {
       <div className='flex flex-wrap flex-col desktop:flex-row'>
         {contact.waysToContact.map((item, key) => (
           <div className='mb-10 desktop:mb-20 mt-10 w-1/2' key={key}>
-            <div className={cn('pt-10 border-t-2', `desktop:w-${8 - key}/12`)}>
+            <div
+              className={cn('pt-10 border-t-2', {
+                'desktop:w-7/12': key === 0,
+                'desktop:w-6/12': key === 1,
+                'desktop:w-8/12': key === 2,
+              })}
+            >
               <h2 className='text-white'>{item.text}</h2>
               <a className='text-parag3' target='_blank' href={item.email.url}>
                 {item.email.label}
