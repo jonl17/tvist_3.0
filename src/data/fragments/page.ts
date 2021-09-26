@@ -8,6 +8,16 @@ export const fragment = graphql`
     tags
     data {
       title
+      text {
+        html
+      }
+      featured_image {
+        url
+        alt
+        fluid {
+          ...GatsbyImgixFluid
+        }
+      }
       body {
         ... on PrismicPageDataBodyProjects {
           ...projectsSliceFragment

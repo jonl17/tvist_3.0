@@ -15,7 +15,7 @@ const Footer = () => {
             <div className={cn('pt-10 border-t-2', `desktop:w-${8 - key}/12`)}>
               <h2 className='text-white'>{item.text}</h2>
               <a className='text-parag3' target='_blank' href={item.email.url}>
-                {item.email.url}
+                {item.email.label}
               </a>
             </div>
           </div>

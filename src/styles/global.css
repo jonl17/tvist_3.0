@@ -87,6 +87,11 @@
     @apply desktop:px-12;
   }
 
+  .negative-pad {
+    @apply -mx-6;
+    @apply desktop:-mx-12;
+  }
+
   .banner-item-width {
     width: 500px;
   }

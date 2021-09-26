@@ -15,6 +15,15 @@ export interface PageInterface {
   uid: string
   tags: string[]
   body: any[]
+  title: string
+  text: {
+    html: string
+  }
+  featuredImage: {
+    url: string
+    alt: string
+    fluid: FluidObject
+  }
 }
 
 export const pageResolver = (node: any): PageInterface => ({
@@ -22,6 +31,9 @@ export const pageResolver = (node: any): PageInterface => ({
   uid: node.uid,
   tags: node.tags,
   body: node.data.body,
+  title: node.data.title,
+  text: node.data.text,
+  featuredImage: node.data.featured_image,
 })
 
 export interface ProjectInterface {
@@ -62,6 +74,7 @@ export interface ContactInterface {
     text: string
     email: {
       url: string
+      label: string
     }
   }[]
 }
@@ -75,6 +88,10 @@ export const contactResolver = (node: any): ContactInterface => ({
     url: item.url.url,
   })),
   waysToContact: node.data.ways_to_contact.map((item: any) => ({
-    ...item,
+    text: item.text,
+    email: {
+      url: item.email.url,
+      label: item.email.url.replace('mailto:', ''),
+    },
   })),
 })

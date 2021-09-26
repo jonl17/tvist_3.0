@@ -8,7 +8,7 @@ export type ProjectsProps = {
   projects: ProjectInterface[]
 }
 
-type BoxProps = { tall?: boolean; wide?: boolean }
+type BoxProps = { tall?: boolean; wide?: boolean; className?: string }
 
 const ProjectBox = ({
   featuredImage,
@@ -17,22 +17,24 @@ const ProjectBox = ({
   url,
   tall,
   wide,
+  className = '',
 }: ProjectInterface & BoxProps) => {
   return (
     <Link
       to={url}
       className={cn(
+        className,
         {
           'w-full desktop:w-7/12': wide,
           'w-full desktop:w-5/12': !wide,
         },
-        'mb-10 desktop:mb-32'
+        'mb-16 desktop:mb-32'
       )}
     >
       <div
         className={cn('pr-5 pb-5', {
-          'image-tall': tall,
-          'image-short': !tall,
+          'image-tall': false,
+          'image-short': true,
         })}
       >
         <Img
@@ -50,10 +52,15 @@ const ProjectBox = ({
 const Projects = ({ projects }: ProjectsProps) => {
   return (
     <div>
-      <h1 className='my-10'>Það nýjasta</h1>
-      <div className='flex flex-wrap -mr-5'>
+      <div className='flex flex-wrap -mr-5 mt-32'>
         {projects.map((project, i) => {
-          return <ProjectBox key={i} {...project} />
+          return (
+            <ProjectBox
+              className={i % 2 === 0 ? 'desktop:-mt-16' : 'desktop:-mb-16'}
+              key={i}
+              {...project}
+            />
+          )
         })}
       </div>
     </div>
