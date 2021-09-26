@@ -50,7 +50,7 @@
   li {
     @apply text-parag3;
     @apply desktop:text-parag2;
-    @apply font-semibold;
+    @apply font-normal;
     @apply mb-1;
   }
 
@@ -59,6 +59,10 @@
   }
   a:hover {
     @apply opacity-75;
+  }
+
+  .gatsby-image-wrapper {
+    @apply rounded;
   }
 }
 

@@ -20,12 +20,9 @@ const Menu = ({ pages = [], theme = 'primary' }: MenuProps) => {
 
   return (
     <div
-      className={cn(
-        'px-6 desktop:px-12 h-28 flex items-center justify-between',
-        {
-          'bg-primary': theme === 'primary',
-        }
-      )}
+      className={cn('pad h-28 flex items-center justify-between', {
+        'bg-primary': theme === 'primary',
+      })}
     >
       <Logo ghost={theme === 'primary'} />
       <div>

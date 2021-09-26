@@ -13,6 +13,7 @@ const gatsbySourcePrismic = {
       page: require('./schemas/page.json'),
       project: require('./schemas/project.json'),
       menu: require('./schemas/menu.json'),
+      contact: require('./schemas/contact.json'),
     },
     linkResolver: require('./utils/linkResolver').linkResolver,
   },

@@ -1,0 +1,67 @@
+{
+  "Main": {
+    "address": {
+      "type": "Text",
+      "config": {
+        "label": "Address",
+        "placeholder": "Þórunnartún 2"
+      }
+    },
+    "city": {
+      "type": "Text",
+      "config": {
+        "label": "City",
+        "placeholder": "105 Reykjavík"
+      }
+    },
+    "telephone": {
+      "type": "Text",
+      "config": {
+        "label": "Telephone"
+      }
+    },
+    "social_media": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "platform": {
+            "type": "Select",
+            "config": {
+              "options": ["facebook", "instagram", "spotify"],
+              "label": "platform"
+            }
+          },
+          "url": {
+            "type": "Link",
+            "config": {
+              "allowTargetBlank": true,
+              "label": "url"
+            }
+          }
+        },
+        "label": "Social media"
+      }
+    },
+    "ways_to_contact": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "text": {
+            "type": "Text",
+            "config": {
+              "label": "Text"
+            }
+          },
+          "email": {
+            "type": "Link",
+            "config": {
+              "allowTargetBlank": true,
+              "label": "Email"
+            }
+          }
+        },
+        "label": "Ways to contact"
+      }
+    }
+  }
+}

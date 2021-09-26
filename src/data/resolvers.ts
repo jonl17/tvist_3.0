@@ -49,3 +49,32 @@ export const projectResolver = (node: any): ProjectInterface => ({
   client: node.data.client,
   featuredImage: node.data.featured_image,
 })
+
+export interface ContactInterface {
+  address: string
+  telephone: string
+  city: string
+  socialMedia: {
+    platform: 'facebook' | 'instagram' | 'spotify'
+    url: string
+  }[]
+  waysToContact: {
+    text: string
+    email: {
+      url: string
+    }
+  }[]
+}
+
+export const contactResolver = (node: any): ContactInterface => ({
+  address: node.data.address,
+  telephone: node.data.telephone,
+  city: node.data.city,
+  socialMedia: node.data.social_media.map((item: any) => ({
+    platform: item.platform,
+    url: item.url.url,
+  })),
+  waysToContact: node.data.ways_to_contact.map((item: any) => ({
+    ...item,
+  })),
+})
