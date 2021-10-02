@@ -15,6 +15,6 @@ const PreviewPage = () => {
 export default withPrismicPreviewResolver(PreviewPage, [
   {
     repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME ?? '',
-    linkResolver: require('../../cms/utils/linkResolver').linkResolver,
+    linkResolver: () => require('../../cms/utils/linkResolver').linkResolver,
   },
 ])
