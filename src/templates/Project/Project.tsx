@@ -38,22 +38,25 @@ export const ProjectTemplate = ({ data }: Props) => {
           <div>
             <p className='text-parag3'>Fyrirtæki:</p>
           </div>
-          <div className='grid pl-5'>
+          <div className='grid pl-3'>
             <p className='text-parag3'>{project.client}</p>
           </div>
         </div>
+        <>
+          {project.tags.length ? (
+            <div className='flex text-white banner-item-width'>
+              <p className='text-parag3'>Hvað var gert?</p>
 
-        <div className='flex text-white banner-item-width'>
-          <p className='text-parag3'>Hvað var gert?</p>
-
-          <div className='grid pl-5'>
-            {project.tags.map((tag, key) => (
-              <p key={key} className='text-parag3'>
-                {tag}
-              </p>
-            ))}
-          </div>
-        </div>
+              <div className='grid pl-3'>
+                {project.tags.map((tag, key) => (
+                  <p key={key} className='text-parag3'>
+                    {tag}
+                  </p>
+                ))}
+              </div>
+            </div>
+          ) : null}
+        </>
       </Head>
 
       <Fade down duration={500} distance='10px' when={loaded}>

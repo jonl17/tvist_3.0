@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 import cn from 'classnames'
 import Filter from '@cmp/site/Filter'
 import Head from '@cmp/site/Head'
-import { title } from 'process'
+import { useGetProjects } from '@src/hooks/useGetProjects'
 
 export type ProjectsProps = {
   text: {
@@ -29,10 +29,10 @@ const ProjectBox = ({
       to={url}
       className={cn(
         className,
-        {
-          'w-full desktop:w-7/12': wide,
-          'w-full desktop:w-5/12': !wide,
-        },
+        // {
+        //   'w-full desktop:w-7/12': wide,
+        //   'w-full desktop:w-5/12': !wide,
+        // },
         'mb-16 desktop:mb-32'
       )}
     >
@@ -54,7 +54,9 @@ const ProjectBox = ({
   )
 }
 
-const Projects = ({ text, projects }: ProjectsProps) => {
+const Projects = ({ text }: ProjectsProps) => {
+  const projects = useGetProjects()
+
   return (
     <div className='relative'>
       <Head description={text} className='bg-white'>
@@ -65,7 +67,11 @@ const Projects = ({ text, projects }: ProjectsProps) => {
           return (
             <ProjectBox
               key={i}
-              className={i % 2 === 0 ? 'desktop:-mt-16' : 'desktop:-mb-16'}
+              className={cn(
+                'w-full',
+                i % 2 === 0 ? 'desktop:-mt-16' : 'desktop:-mb-16',
+                i % 3 === 0 ? 'desktop:w-7/12' : ' desktop:w-5/12'
+              )}
               {...project}
             />
           )

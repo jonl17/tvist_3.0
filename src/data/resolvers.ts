@@ -54,6 +54,8 @@ export const projectResolver = (node: any): ProjectInterface => ({
   body: node.data.body,
 })
 
+export type ProjectFilter = 'all' | 'client' | 'tags'
+
 export interface ContactInterface {
   address: string
   telephone: string

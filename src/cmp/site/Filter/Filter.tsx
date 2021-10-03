@@ -30,7 +30,7 @@ const Filter = ({ className = '' }: Props) => {
       <div>
         <p className='text-parag3'>Flokkar:</p>
       </div>
-      <div className='grid pl-5'>
+      <div className='grid pl-3'>
         {filters.map(filter => (
           <button
             onClick={() =>

@@ -99,7 +99,7 @@
   }
 
   .banner-item-width {
-    width: 500px;
+    @apply desktop:w-96;
   }
 
   .anchor-active > * {
