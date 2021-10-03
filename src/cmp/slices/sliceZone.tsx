@@ -1,5 +1,5 @@
 import React from 'react'
-import Projects from '@cmp/slices/Projects'
+import Projects, { ProjectsProps } from '@cmp/slices/Projects'
 import { projectResolver } from '@src/data/resolvers'
 
 type Props = {
@@ -14,13 +14,15 @@ const SliceZone = ({ slice }: Props) => {
   const sliceProps = (sliceType: string) => {
     switch (sliceType) {
       case 'projects':
-        return {
+        const props: ProjectsProps = {
+          text: slice.primary.text,
           projects: slice.items.map((item: any) => ({
             tall: item.tall,
             wide: item.wide,
             ...projectResolver(item.project.document),
           })),
         }
+        return props
     }
   }
 

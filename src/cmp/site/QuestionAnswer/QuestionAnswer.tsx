@@ -10,9 +10,7 @@ type Props = {
 const QuestionAnswer = ({ question, answer, className = '' }: Props) => {
   return (
     <div className={cn('flex', className)}>
-      <p className='text-white text-parag3 mr-2 whitespace-nowrap'>
-        {question + ':'}
-      </p>
+      <p className='text-white text-parag3 mr-2'>{question + ':'}</p>
       <p className='text-primary-light text-parag3'>{answer}</p>
     </div>
   )

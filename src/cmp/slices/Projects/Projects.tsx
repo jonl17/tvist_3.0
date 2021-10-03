@@ -3,8 +3,12 @@ import { ProjectInterface } from '@src/data/resolvers'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import cn from 'classnames'
+import Filter from '@cmp/site/Filter'
 
 export type ProjectsProps = {
+  text: {
+    html: string
+  }
   projects: ProjectInterface[]
 }
 
@@ -15,7 +19,6 @@ const ProjectBox = ({
   title,
   client,
   url,
-  tall,
   wide,
   className = '',
 }: ProjectInterface & BoxProps) => {
@@ -49,10 +52,18 @@ const ProjectBox = ({
   )
 }
 
-const Projects = ({ projects }: ProjectsProps) => {
+const Projects = ({ text, projects }: ProjectsProps) => {
   return (
-    <div>
-      <div className='flex flex-wrap -mr-5 mt-32'>
+    <div className='relative'>
+      <div className='desktop:flex justify-between'>
+        <div
+          className='desktop:w-1/2 mb-10 desktop:mb-0'
+          dangerouslySetInnerHTML={{ __html: text.html }}
+        />
+
+        <Filter className='desktop::w-1/2' />
+      </div>
+      <div className='flex flex-wrap -mr-5 mt-16 desktop:mt-32'>
         {projects.map((project, i) => {
           return (
             <ProjectBox

@@ -16,14 +16,6 @@ export interface PageInterface {
   tags: string[]
   body: any[]
   title: string
-  text: {
-    html: string
-  }
-  featuredImage: {
-    url: string
-    alt: string
-    fluid: FluidObject
-  }
 }
 
 export const pageResolver = (node: any): PageInterface => ({
@@ -32,8 +24,6 @@ export const pageResolver = (node: any): PageInterface => ({
   tags: node.tags,
   body: node.data.body,
   title: node.data.title,
-  text: node.data.text,
-  featuredImage: node.data.featured_image,
 })
 
 export interface ProjectInterface {

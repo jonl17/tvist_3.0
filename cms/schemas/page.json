@@ -12,22 +12,6 @@
         "label": "Title"
       }
     },
-    "text": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, list-item, o-list-item",
-        "allowTargetBlank": true,
-        "label": "Text"
-      }
-    },
-    "featured_image": {
-      "type": "Image",
-      "config": {
-        "constraint": {},
-        "thumbnails": [],
-        "label": "Featured image"
-      }
-    },
     "body": {
       "type": "Slices",
       "fieldset": "Slice zone",
@@ -40,7 +24,16 @@
             "description": "Yfirlit verkefna",
             "icon": "accessibility",
             "display": "list",
-            "non-repeat": {},
+            "non-repeat": {
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,heading1,heading2,heading6,strong,em,hyperlink,list-item",
+                  "allowTargetBlank": true,
+                  "label": "Text"
+                }
+              }
+            },
             "repeat": {
               "project": {
                 "type": "Link",
@@ -65,6 +58,42 @@
                 }
               }
             }
+          },
+          "rich_text": {
+            "type": "Slice",
+            "fieldset": "Rich Text",
+            "description": "Add headings, paragraphs, links, bullet lists.",
+            "icon": "text_fields",
+            "display": "list",
+            "non-repeat": {
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "allowTargetBlank": true,
+                  "label": "Text"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "banner": {
+            "type": "Slice",
+            "fieldset": "Banner",
+            "description": "Upload image to a full sized banner.",
+            "icon": "beenhere",
+            "display": "list",
+            "non-repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              }
+            },
+            "repeat": {}
           }
         }
       }
