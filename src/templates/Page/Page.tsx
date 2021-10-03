@@ -5,6 +5,8 @@ import SliceZone from '@cmp/slices/sliceZone'
 import { pageResolver } from '@src/data/resolvers'
 import { useTheme } from '@src/context/theme'
 import Img from 'gatsby-image'
+import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
+import { linkResolver } from '@root/cms/utils/linkResolver'
 
 type Props = {
   data: any
@@ -55,4 +57,9 @@ export const query = graphql`
   }
 `
 
-export default PageTemplate
+export default withPrismicPreview(PageTemplate, [
+  {
+    repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME || '',
+    linkResolver,
+  },
+])
