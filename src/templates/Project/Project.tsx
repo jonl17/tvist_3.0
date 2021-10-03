@@ -7,6 +7,8 @@ import { useTheme } from '@src/context/theme'
 import Img from 'gatsby-image'
 import { Fade } from 'react-reveal'
 import SliceZone from '@cmp/slices/sliceZone'
+import { linkResolver } from '@root/cms/utils/linkResolver'
+import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 
 type Props = {
   data: any
@@ -47,4 +49,9 @@ export const query = graphql`
   }
 `
 
-export default ProjectTemplate
+export default withPrismicPreview(ProjectTemplate, [
+  {
+    repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME || '',
+    linkResolver,
+  },
+])
