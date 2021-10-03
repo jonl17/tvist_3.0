@@ -4,6 +4,8 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import cn from 'classnames'
 import Filter from '@cmp/site/Filter'
+import Head from '@cmp/site/Head'
+import { title } from 'process'
 
 export type ProjectsProps = {
   text: {
@@ -55,20 +57,15 @@ const ProjectBox = ({
 const Projects = ({ text, projects }: ProjectsProps) => {
   return (
     <div className='relative'>
-      <div className='desktop:flex justify-between'>
-        <div
-          className='desktop:w-1/2 mb-10 desktop:mb-0'
-          dangerouslySetInnerHTML={{ __html: text.html }}
-        />
-
+      <Head description={text} className='bg-white'>
         <Filter className='desktop::w-1/2' />
-      </div>
+      </Head>
       <div className='flex flex-wrap -mr-5 mt-16 desktop:mt-32'>
         {projects.map((project, i) => {
           return (
             <ProjectBox
-              className={i % 2 === 0 ? 'desktop:-mt-16' : 'desktop:-mb-16'}
               key={i}
+              className={i % 2 === 0 ? 'desktop:-mt-16' : 'desktop:-mb-16'}
               {...project}
             />
           )

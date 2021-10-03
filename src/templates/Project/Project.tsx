@@ -9,6 +9,7 @@ import { Fade } from 'react-reveal'
 import SliceZone from '@cmp/slices/sliceZone'
 import { linkResolver } from '@root/cms/utils/linkResolver'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
+import Head from '@src/cmp/site/Head'
 
 type Props = {
   data: any
@@ -28,7 +29,33 @@ export const ProjectTemplate = ({ data }: Props) => {
 
   return (
     <div className='project'>
-      <ProjectHead {...project} />
+      <Head
+        className='pad bg-primary'
+        title={project.title}
+        description={project.excerpt}
+      >
+        <div className='flex text-white banner-item-width'>
+          <div>
+            <p className='text-parag3'>Fyrirtæki:</p>
+          </div>
+          <div className='grid pl-5'>
+            <p className='text-parag3'>{project.client}</p>
+          </div>
+        </div>
+
+        <div className='flex text-white banner-item-width'>
+          <p className='text-parag3'>Hvað var gert?</p>
+
+          <div className='grid pl-5'>
+            {project.tags.map((tag, key) => (
+              <p key={key} className='text-parag3'>
+                {tag}
+              </p>
+            ))}
+          </div>
+        </div>
+      </Head>
+
       <Fade down duration={500} distance='10px' when={loaded}>
         <div>
           <Img fluid={project.featuredImage.fluid} />
