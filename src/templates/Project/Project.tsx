@@ -42,25 +42,7 @@ export const query = graphql`
   query ProjectQuery($id: String) {
     prismicProject(id: { eq: $id }) {
       _previewable
-      uid
-      url
-      tags
-      data {
-        title {
-          text
-        }
-        client
-        excerpt {
-          html
-        }
-        featured_image {
-          alt
-          url
-          fluid {
-            ...GatsbyImgixFluid
-          }
-        }
-      }
+      ...projectFragment
     }
   }
 `
