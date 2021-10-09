@@ -57,9 +57,6 @@
   a {
     @apply cursor-pointer;
   }
-  a:hover {
-    @apply opacity-75;
-  }
 
   .gatsby-image-wrapper {
     @apply rounded;

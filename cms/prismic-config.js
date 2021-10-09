@@ -14,6 +14,7 @@ const gatsbySourcePrismic = {
       project: require('./schemas/project.json'),
       menu: require('./schemas/menu.json'),
       contact: require('./schemas/contact.json'),
+      project_page: require('./schemas/project_page.json'),
     },
     linkResolver: require('./utils/linkResolver').linkResolver,
   },

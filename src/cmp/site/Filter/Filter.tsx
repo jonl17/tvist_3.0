@@ -1,29 +1,14 @@
 import React from 'react'
 import cn from 'classnames'
-import { mergeQueryParams, useQueryParams } from '@src/utils/queryParams'
+import { useGetProjectPages } from '@src/hooks/useGetProjectPages'
+import { Link } from 'gatsby'
 
 type Props = {
   className?: string
 }
 
-const filters: { id: string; label: string }[] = [
-  {
-    id: 'all',
-    label: 'Öll verkefni',
-  },
-  {
-    id: 'client',
-    label: 'Fyrirtæki',
-  },
-  {
-    id: 'tags',
-    label: 'Tegund af vinnu',
-  },
-]
-
 const Filter = ({ className = '' }: Props) => {
-  const qs = useQueryParams()
-  const chosenFilter = qs.filter ?? filters[0].id
+  const projectPages = useGetProjectPages()
 
   return (
     <div className={(cn(className), 'flex text-primary banner-item-width')}>
@@ -31,23 +16,10 @@ const Filter = ({ className = '' }: Props) => {
         <p className='text-parag3'>Flokkar:</p>
       </div>
       <div className='grid pl-3'>
-        {filters.map(filter => (
-          <button
-            onClick={() =>
-              mergeQueryParams({
-                filter: filter.id,
-              })
-            }
-            className='text-left'
-          >
-            <p
-              className={cn('text-parag3 hover:text-black', {
-                'text-primary-light': filter.id === chosenFilter,
-              })}
-            >
-              {filter.label}
-            </p>
-          </button>
+        {projectPages.map((page, key) => (
+          <Link key={key} to={page.url} activeClassName='text-primary-light'>
+            <p className={cn('text-parag3 hover:text-black')}>{page.title}</p>
+          </Link>
         ))}
       </div>
     </div>

@@ -26,6 +26,28 @@ export const pageResolver = (node: any): PageInterface => ({
   title: node.data.title,
 })
 
+export type FilterType = 'all' | 'client' | 'tags'
+
+export interface ProjectPageInterface {
+  url: string
+  uid: string
+  tags: string[]
+  title: string
+  filter: FilterType
+  text: {
+    html: string
+  }
+}
+
+export const projectPageResolver = (node: any): ProjectPageInterface => ({
+  url: node.url,
+  uid: node.uid,
+  tags: node.tags,
+  title: node.data.title,
+  filter: node.data.filter,
+  text: node.data.text,
+})
+
 export interface ProjectInterface {
   uid: string
   url: string

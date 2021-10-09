@@ -15,7 +15,7 @@
             "type": "Link",
             "config": {
               "select": "document",
-              "customtypes": ["page"],
+              "customtypes": ["page", "project_page"],
               "label": "Page"
             }
           },

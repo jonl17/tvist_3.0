@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { graphql } from 'gatsby'
 import '@data/fragments/project.ts'
 import { projectResolver } from '@src/data/resolvers'
-import ProjectHead from '@src/cmp/site/ProjectHead'
 import { useTheme } from '@src/context/theme'
 import Img from 'gatsby-image'
 import { Fade } from 'react-reveal'
@@ -29,11 +28,7 @@ export const ProjectTemplate = ({ data }: Props) => {
 
   return (
     <div className='project'>
-      <Head
-        className='pad bg-primary'
-        title={project.title}
-        description={project.excerpt}
-      >
+      <Head title={project.title} description={project.excerpt} type='red'>
         <div className='flex text-white banner-item-width'>
           <div>
             <p className='text-parag3'>Fyrirtæki:</p>
