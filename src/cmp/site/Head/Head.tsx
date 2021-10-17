@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Fade } from 'react-reveal'
 import cn from 'classnames'
+import { PageTheme } from '@src/data/resolvers'
 
 type Props = {
   title?: string
@@ -8,7 +9,7 @@ type Props = {
     html: string
   }
   className?: string
-  type: 'red' | 'white'
+  theme: PageTheme
 }
 
 const Head: React.FC<Props> = ({
@@ -16,7 +17,7 @@ const Head: React.FC<Props> = ({
   description,
   children,
   className,
-  type = 'white',
+  theme = 'white',
 }) => {
   const [loaded, setLoaded] = useState(false)
   useEffect(() => setLoaded(true), [])
@@ -25,8 +26,9 @@ const Head: React.FC<Props> = ({
       className={cn(
         'py-6 desktop:py-12 flex justify-between animate-slideIn pad',
         {
-          'bg-primary': type === 'red',
-          'bg-white': type === 'white',
+          'bg-primary': theme === 'red',
+          'bg-white': theme === 'white',
+          'bg-primary-lightest': theme === 'pink',
         }
       )}
     >
@@ -35,8 +37,8 @@ const Head: React.FC<Props> = ({
           <Fade when={loaded} distance='10px' delay={500} left duration={250}>
             <h1
               className={cn('mb-5', {
-                'text-white': type === 'red',
-                'text-primary': type === 'white',
+                'text-white': theme === 'red',
+                'text-primary': theme === 'white' || theme === 'pink',
               })}
             >
               {title}
@@ -48,8 +50,8 @@ const Head: React.FC<Props> = ({
           <Fade when={loaded} distance='10px' left delay={750} duration={250}>
             <div
               className={cn({
-                'text-white': type === 'red',
-                'text-primary': type === 'white',
+                'text-white': theme === 'red',
+                'text-primary': theme === 'white' || theme === 'pink',
               })}
               dangerouslySetInnerHTML={{ __html: description.html }}
             />
@@ -60,8 +62,8 @@ const Head: React.FC<Props> = ({
         <Fade when={loaded} right distance='10px' delay={500}>
           <div
             className={cn({
-              'text-white': type === 'red',
-              'text-primary': type === 'white',
+              'text-white': theme === 'red',
+              'text-primary': theme === 'white' || theme === 'pink',
             })}
           >
             {children}

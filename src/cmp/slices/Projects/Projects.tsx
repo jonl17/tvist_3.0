@@ -4,10 +4,7 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import cn from 'classnames'
 import Fade from '@src/cmp/site/Fade'
-
-export type ProjectsProps = {
-  projects: ProjectInterface[]
-}
+import Filter from '@cmp/site/Filter'
 
 type BoxProps = { tall?: boolean; wide?: boolean; className?: string }
 
@@ -40,10 +37,10 @@ const ProjectBox = ({
   )
 }
 
-const Projects = ({ projects }: ProjectsProps) => {
+const Projects = () => {
   return (
     <div className='flex flex-wrap -mr-5 mt-16 desktop:mt-32'>
-      {projects.map((project, i) => {
+      {/* {projects.map((project, i) => {
         return (
           <ProjectBox
             key={i}
@@ -55,7 +52,7 @@ const Projects = ({ projects }: ProjectsProps) => {
             {...project}
           />
         )
-      })}
+      })} */}
     </div>
   )
 }

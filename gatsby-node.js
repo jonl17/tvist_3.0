@@ -12,6 +12,9 @@ exports.createPages = async ({ graphql, actions }) => {
           url
           uid
           tags
+          data {
+            theme
+          }
         }
       }
     }
@@ -28,30 +31,11 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  const projectPages = await graphql(`
-    {
-      allPrismicProjectPage {
-        nodes {
-          id
-          url
-          uid
-          tags
-          data {
-            title
-          }
-        }
-      }
-    }
-  `)
 
   const pageTemplate = path.resolve(__dirname, `src/templates/Page/Page.tsx`)
   const projectTemplate = path.resolve(
     __dirname,
     `src/templates/Project/Project.tsx`
-  )
-  const projectPageTemplate = path.resolve(
-    __dirname,
-    'src/templates/ProjectPage/ProjectPage.tsx'
   )
 
   // pages
@@ -70,17 +54,6 @@ exports.createPages = async ({ graphql, actions }) => {
       path: node.url,
       component: projectTemplate,
       context: {
-        ...node,
-      },
-    })
-  })
-  // project pages
-  projectPages.data.allPrismicProjectPage.nodes.forEach(node => {
-    createPage({
-      path: node.url,
-      component: projectPageTemplate,
-      context: {
-        layout: 'project-page',
         ...node,
       },
     })

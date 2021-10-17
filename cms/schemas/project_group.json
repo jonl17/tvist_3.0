@@ -1,0 +1,27 @@
+{
+  "Main": {
+    "group_name": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Group name"
+      }
+    },
+    "projects": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "project": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": ["project"],
+              "label": "Project"
+            }
+          }
+        },
+        "label": "Projects"
+      }
+    }
+  }
+}

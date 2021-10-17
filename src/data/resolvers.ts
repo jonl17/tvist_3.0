@@ -10,12 +10,19 @@ export const menuResolver = (node: any): MenuInterface => ({
   url: node.page.url,
 })
 
+export type PageTheme = 'white' | 'pink' | 'red'
+
 export interface PageInterface {
   url: string
   uid: string
   tags: string[]
   body: any[]
   title: string
+  description: {
+    html: string
+  }
+  theme: PageTheme
+  submenu: MenuInterface[]
 }
 
 export const pageResolver = (node: any): PageInterface => ({
@@ -24,29 +31,16 @@ export const pageResolver = (node: any): PageInterface => ({
   tags: node.tags,
   body: node.data.body,
   title: node.data.title,
+  description: node.data.description,
+  theme: node.data.theme,
+  submenu: node.data.sub_menu.document
+    ? node.data.sub_menu.document.data.pages.map((page: any) =>
+        menuResolver(page)
+      )
+    : [],
 })
 
 export type FilterType = 'all' | 'client' | 'tags'
-
-export interface ProjectPageInterface {
-  url: string
-  uid: string
-  tags: string[]
-  title: string
-  filter: FilterType
-  text: {
-    html: string
-  }
-}
-
-export const projectPageResolver = (node: any): ProjectPageInterface => ({
-  url: node.url,
-  uid: node.uid,
-  tags: node.tags,
-  title: node.data.title,
-  filter: node.data.filter,
-  text: node.data.text,
-})
 
 export interface ProjectInterface {
   uid: string

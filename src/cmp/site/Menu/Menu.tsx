@@ -3,16 +3,17 @@ import Logo from '@cmp/site/Logo'
 import cn from 'classnames'
 import Burger from '@cmp/site/Burger'
 import Anchor from '@cmp/site/Anchor'
+import { PageTheme } from '@src/data/resolvers'
 
 type MenuProps = {
   pages: {
     url: string
     label: string
   }[]
-  theme: 'ghost' | 'primary'
+  theme: PageTheme
 }
 
-const Menu = ({ pages = [], theme = 'primary' }: MenuProps) => {
+const Menu = ({ pages = [], theme = 'white' }: MenuProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const openMobileMenu = () => setMobileMenuOpen(true)
@@ -21,14 +22,16 @@ const Menu = ({ pages = [], theme = 'primary' }: MenuProps) => {
   return (
     <div
       className={cn('pad h-28 flex items-center justify-between', {
-        'bg-primary': theme === 'primary',
+        'bg-primary': theme === 'red',
+        'bg-white': theme === 'white',
+        'bg-primary-lightest': theme === 'pink',
       })}
     >
-      <Logo ghost={theme === 'primary'} />
+      <Logo ghost={theme === 'red'} />
       <div>
         <div className='block desktop:hidden'>
           <Burger
-            ghost={theme === 'primary'}
+            ghost={theme === 'red'}
             isOpen={mobileMenuOpen}
             open={openMobileMenu}
             close={closeMobileMenu}
@@ -40,7 +43,7 @@ const Menu = ({ pages = [], theme = 'primary' }: MenuProps) => {
               key={i}
               className={cn({
                 'mr-6': i !== pages.length - 1,
-                'text-white': theme === 'primary',
+                'text-white': theme === 'red',
               })}
               {...page}
             />

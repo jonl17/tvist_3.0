@@ -6,6 +6,8 @@ import { pageResolver } from '@src/data/resolvers'
 import { useTheme } from '@src/context/theme'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { linkResolver } from '@root/cms/utils/linkResolver'
+import Head from '@cmp/site/Head'
+import Submenu from '@cmp/site/Submenu'
 
 type Props = {
   data: any
@@ -15,16 +17,10 @@ export const PageTemplate = ({ data }: Props) => {
   if (!data) return null
 
   const page = pageResolver(data.prismicPage)
-
-  const { updateTheme } = useTheme()
-
-  useEffect(() => {
-    updateTheme('ghost')
-  }, [])
-
   return (
-    <div className='page pad'>
-      <div className='my-10 desktop:w-1/3'></div>
+    <div className='page'>
+      <Head {...page}></Head>
+      {page.submenu.length > 0 && <Submenu menu={page.submenu} />}
       {page.body.map((slice, key) => (
         <SliceZone key={key} slice={slice} />
       ))}

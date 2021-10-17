@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby'
 import './project'
+import './menu'
 
 export const fragment = graphql`
   fragment pageFragment on PrismicPage {
@@ -8,6 +9,18 @@ export const fragment = graphql`
     tags
     data {
       title
+      theme
+      description {
+        html
+      }
+      sub_menu {
+        document {
+          ... on PrismicMenu {
+            ...menuFragment
+          }
+        }
+      }
+
       body {
         ... on PrismicPageDataBodyProjects {
           ...projectsSliceFragment
@@ -49,19 +62,5 @@ export const fragment = graphql`
   fragment projectsSliceFragment on PrismicPageDataBodyProjects {
     id
     slice_type
-    primary {
-      text {
-        html
-      }
-    }
-    items {
-      tall
-      wide
-      project {
-        document {
-          ...projectFragment
-        }
-      }
-    }
   }
 `

@@ -12,11 +12,36 @@
         "label": "Title"
       }
     },
+    "description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
+        "allowTargetBlank": true,
+        "label": "Description"
+      }
+    },
+    "theme": {
+      "type": "Select",
+      "config": {
+        "options": ["white", "pink", "red"],
+        "default_value": "white",
+        "label": "Theme"
+      }
+    },
+    "sub_menu": {
+      "type": "Link",
+      "config": {
+        "select": "document",
+        "customtypes": ["menu"],
+        "label": "Sub menu",
+        "placeholder": "Add a smaller menu below the head"
+      }
+    },
     "body": {
       "type": "Slices",
       "fieldset": "Slice zone",
       "config": {
-        "labels": null,
+        "labels": {},
         "choices": {
           "projects": {
             "type": "Slice",
@@ -25,39 +50,16 @@
             "icon": "accessibility",
             "display": "list",
             "non-repeat": {
-              "text": {
-                "type": "StructuredText",
+              "display": {
+                "type": "Select",
                 "config": {
-                  "multi": "paragraph,heading1,heading2,heading6,strong,em,hyperlink,list-item",
-                  "allowTargetBlank": true,
-                  "label": "Text"
+                  "options": ["all", "client"],
+                  "default_value": "all",
+                  "label": "Display"
                 }
               }
             },
-            "repeat": {
-              "project": {
-                "type": "Link",
-                "config": {
-                  "select": "document",
-                  "customtypes": ["project"],
-                  "label": "Project"
-                }
-              },
-              "tall": {
-                "type": "Boolean",
-                "config": {
-                  "default_value": false,
-                  "label": "tall"
-                }
-              },
-              "wide": {
-                "type": "Boolean",
-                "config": {
-                  "default_value": false,
-                  "label": "wide"
-                }
-              }
-            }
+            "repeat": {}
           },
           "rich_text": {
             "type": "Slice",
@@ -94,6 +96,24 @@
               }
             },
             "repeat": {}
+          },
+          "project_groups": {
+            "type": "Slice",
+            "fieldset": "Project groups",
+            "description": "Add project groups",
+            "icon": "group_work",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "group": {
+                "type": "Link",
+                "config": {
+                  "select": "document",
+                  "customtypes": ["project_group"],
+                  "label": "Group"
+                }
+              }
+            }
           }
         }
       }
