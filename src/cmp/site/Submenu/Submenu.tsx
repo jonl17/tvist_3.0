@@ -12,7 +12,6 @@ type Props = {
 const Submenu = ({ menu }: Props) => {
   const { pathname } = useLocation()
   const isCurrentPath = (path: string) => {
-    console.log(path, pathname)
     return path === pathname || path + '/' === pathname
   }
   return (

@@ -6,7 +6,7 @@ import { PageTheme } from '@src/data/resolvers'
 
 type Props = {
   pageContext: {
-    data: {
+    data?: {
       theme: PageTheme
     }
   }
@@ -14,10 +14,12 @@ type Props = {
 
 const MainLayout: React.FC<Props> = ({ children, pageContext }) => {
   const menu = useGetMenu()
-
   return (
     <main>
-      <Menu theme={pageContext.data.theme} pages={menu} />
+      <Menu
+        theme={pageContext.data ? pageContext.data.theme : 'white'}
+        pages={menu}
+      />
       {children}
       <Footer />
     </main>
