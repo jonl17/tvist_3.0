@@ -54,6 +54,9 @@ exports.createPages = async ({ graphql, actions }) => {
       path: node.url,
       component: projectTemplate,
       context: {
+        data: {
+          theme: 'red',
+        },
         ...node,
       },
     })

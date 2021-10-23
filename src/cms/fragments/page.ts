@@ -31,6 +31,36 @@ export const fragment = graphql`
         ... on PrismicPageDataBodyBanner {
           ...bannerSliceFragment
         }
+        ... on PrismicPageDataBodyProjectGroups {
+          ...projectGroupsSliceFragment
+        }
+      }
+    }
+  }
+
+  fragment projectGroupsSliceFragment on PrismicPageDataBodyProjectGroups {
+    slice_type
+    id
+    items {
+      group {
+        document {
+          ... on PrismicProjectGroup {
+            data {
+              group_name {
+                text
+              }
+              projects {
+                project {
+                  document {
+                    ... on PrismicProject {
+                      ...projectFragment
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -62,5 +92,14 @@ export const fragment = graphql`
   fragment projectsSliceFragment on PrismicPageDataBodyProjects {
     id
     slice_type
+    items {
+      project {
+        document {
+          ... on PrismicProject {
+            ...projectFragment
+          }
+        }
+      }
+    }
   }
 `

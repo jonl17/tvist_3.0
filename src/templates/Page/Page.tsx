@@ -1,10 +1,10 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import '@data/fragments/page.ts'
+import '@cms/fragments/page.ts'
 import SliceZone from '@cmp/slices/sliceZone'
 import { pageResolver } from '@src/data/resolvers'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
-import { linkResolver } from '@root/cms/utils/linkResolver'
+import { linkResolver } from '@cms/utils/linkResolver'
 import Head from '@cmp/site/Head'
 import Submenu from '@cmp/site/Submenu'
 

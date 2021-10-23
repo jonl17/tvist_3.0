@@ -2,7 +2,7 @@ const path = require('path')
 const {
   gatsbySourcePrismic,
   gatsbyPrismicPreviews,
-} = require('./cms/prismic-config')
+} = require('./src/cms/prismic-config')
 
 module.exports = {
   /* Your site config here */
@@ -26,6 +26,7 @@ module.exports = {
           '@templates': path.resolve(__dirname, 'src/templates'),
           '@styles': path.resolve(__dirname, 'src/styles'),
           '@data': path.resolve(__dirname, 'src/data'),
+          '@cms': path.resolve(__dirname, 'src/cms'),
         },
         extensions: [`ts`, `tsx`],
       },

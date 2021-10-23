@@ -49,17 +49,17 @@
             "description": "Yfirlit verkefna",
             "icon": "accessibility",
             "display": "list",
-            "non-repeat": {
-              "display": {
-                "type": "Select",
+            "non-repeat": {},
+            "repeat": {
+              "project": {
+                "type": "Link",
                 "config": {
-                  "options": ["all", "client"],
-                  "default_value": "all",
-                  "label": "Display"
+                  "select": "document",
+                  "customtypes": ["project"],
+                  "label": "Project"
                 }
               }
-            },
-            "repeat": {}
+            }
           },
           "rich_text": {
             "type": "Slice",

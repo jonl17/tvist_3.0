@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { withPrismicPreviewResolver } from 'gatsby-plugin-prismic-previews'
-import { linkResolver } from '@root/cms/utils/linkResolver'
+import { linkResolver } from '@cms/utils/linkResolver'
 
 const PreviewPage = () => {
   return (

@@ -1,6 +1,6 @@
 import { ContactInterface, contactResolver } from '@src/data/resolvers'
 import { graphql, useStaticQuery } from 'gatsby'
-import '@data/fragments/contact'
+import '@cms/fragments/contact'
 
 const useGetContact = (): ContactInterface => {
   const data = useStaticQuery(graphql`

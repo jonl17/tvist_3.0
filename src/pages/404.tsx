@@ -3,7 +3,7 @@ import {
   withPrismicUnpublishedPreview,
   componentResolverFromMap,
 } from 'gatsby-plugin-prismic-previews'
-import { linkResolver } from '@root/cms/utils/linkResolver'
+import { linkResolver } from '@cms/utils/linkResolver'
 import PageTemplate from '@src/templates/Page/Page'
 
 const NotFoundPage = () => {
