@@ -41,7 +41,7 @@
       "type": "Slices",
       "fieldset": "Slice zone",
       "config": {
-        "labels": {},
+        "labels": null,
         "choices": {
           "projects": {
             "type": "Slice",
@@ -111,6 +111,38 @@
                   "select": "document",
                   "customtypes": ["project_group"],
                   "label": "Group"
+                }
+              }
+            }
+          },
+          "staff": {
+            "type": "Slice",
+            "fieldset": "Staff",
+            "description": "Add the staff and display in image grid.",
+            "icon": "assignment_ind",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              },
+              "full_name": {
+                "type": "Text",
+                "config": {
+                  "label": "Full name",
+                  "placeholder": "Ívar Björnsson"
+                }
+              },
+              "role": {
+                "type": "Text",
+                "config": {
+                  "label": "Role",
+                  "placeholder": "Grafískur Hönnuður"
                 }
               }
             }

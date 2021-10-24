@@ -2,6 +2,7 @@ import { ProjectGroupType } from '@src/cmp/site/ProjectGroup'
 import { ProjectGroupsInterface } from '@src/cmp/slices/ProjectGroups'
 import { projectResolver, ProjectInterface } from '@src/data/resolvers'
 import { BannerProps } from '@cmp/slices/Banner'
+import { StaffProps } from '@cmp/slices/Staff'
 
 const propResolver = (slice: {
   slice_type: string
@@ -29,6 +30,15 @@ const propResolver = (slice: {
   } else if (type === 'banner') {
     let props: BannerProps = {
       image: slice.primary.image,
+    }
+    return props
+  } else if (type === 'staff') {
+    let props: StaffProps = {
+      staff: slice.items.map(item => ({
+        image: item.image,
+        fullName: item.full_name,
+        role: item.role,
+      })),
     }
     return props
   } else return {}

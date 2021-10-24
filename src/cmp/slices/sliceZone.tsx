@@ -3,6 +3,7 @@ import { propResolver } from '@cms/lib/prop-resolver'
 import Projects from '@cmp/slices/Projects'
 import ProjectGroups from '@cmp/slices/ProjectGroups'
 import Banner from '@cmp/slices/Banner'
+import Staff from '@cmp/slices/Staff'
 
 type Props = {
   slice: any
@@ -13,6 +14,7 @@ const SliceZone = ({ slice }: Props) => {
     projects: Projects,
     project_groups: ProjectGroups,
     banner: Banner,
+    staff: Staff,
   }
 
   const SliceComponent = sliceComponents[slice.slice_type]

@@ -34,6 +34,9 @@ export const fragment = graphql`
         ... on PrismicPageDataBodyProjectGroups {
           ...projectGroupsSliceFragment
         }
+        ... on PrismicPageDataBodyStaff {
+          ...staffSliceFragment
+        }
       }
     }
   }
@@ -62,6 +65,20 @@ export const fragment = graphql`
           }
         }
       }
+    }
+  }
+
+  fragment staffSliceFragment on PrismicPageDataBodyStaff {
+    id
+    slice_type
+    items {
+      image {
+        alt
+        url
+        gatsbyImageData
+      }
+      full_name
+      role
     }
   }
 
