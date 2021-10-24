@@ -16,9 +16,7 @@ export const fragment = graphql`
       featured_image {
         alt
         url
-        fluid {
-          ...GatsbyImgixFluid
-        }
+        gatsbyImageData
       }
     }
   }

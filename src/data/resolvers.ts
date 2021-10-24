@@ -1,4 +1,10 @@
-import { FluidObject } from 'gatsby-image'
+import { IGatsbyImageData } from 'gatsby-plugin-image'
+
+export type ImageType = {
+  url: string
+  alt: string
+  gatsbyImageData: IGatsbyImageData
+}
 
 export interface MenuInterface {
   label: string
@@ -51,11 +57,7 @@ export interface ProjectInterface {
   excerpt: {
     html: string
   }
-  featuredImage: {
-    url: string
-    alt: string
-    fluid: FluidObject
-  }
+  featuredImage: ImageType
   body: any[]
 }
 

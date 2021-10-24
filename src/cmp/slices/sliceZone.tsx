@@ -1,7 +1,8 @@
 import React from 'react'
+import { propResolver } from '@cms/lib/prop-resolver'
 import Projects from '@cmp/slices/Projects'
 import ProjectGroups from '@cmp/slices/ProjectGroups'
-import { propResolver } from '@cms/lib/prop-resolver'
+import Banner from '@cmp/slices/Banner'
 
 type Props = {
   slice: any
@@ -11,10 +12,12 @@ const SliceZone = ({ slice }: Props) => {
   const sliceComponents: { [key: string]: React.ElementType } = {
     projects: Projects,
     project_groups: ProjectGroups,
+    banner: Banner,
   }
 
   const SliceComponent = sliceComponents[slice.slice_type]
   const props = propResolver(slice)
+  console.log(slice)
   if (SliceComponent) {
     return <SliceComponent {...props} />
   }
