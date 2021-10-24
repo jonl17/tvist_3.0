@@ -34,7 +34,7 @@ export const ProjectTemplate = ({ data }: Props) => {
             <p className='text-parag3'>Fyrirtæki:</p>
           </div>
           <div className='grid pl-3'>
-            <p className='text-parag3'>{project.client}</p>
+            <p className='text-parag3 text-primary-light'>{project.client}</p>
           </div>
         </div>
         <>
@@ -44,7 +44,7 @@ export const ProjectTemplate = ({ data }: Props) => {
 
               <div className='grid pl-3'>
                 {project.tags.map((tag, key) => (
-                  <p key={key} className='text-parag3'>
+                  <p key={key} className='text-parag3 text-primary-light'>
                     {tag}
                   </p>
                 ))}
@@ -53,12 +53,6 @@ export const ProjectTemplate = ({ data }: Props) => {
           ) : null}
         </>
       </Head>
-
-      <Fade down duration={500} distance='10px' when={loaded}>
-        <div>
-          <Img fluid={project.featuredImage.fluid} />
-        </div>
-      </Fade>
       {project.body &&
         project.body.map((slice, key) => <SliceZone key={key} slice={slice} />)}
     </div>

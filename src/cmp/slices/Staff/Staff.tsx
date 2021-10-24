@@ -20,16 +20,16 @@ const Employee = ({ image, fullName, role }: Employee) => {
     <div className='mb-6'>
       <GatsbyImage image={gImage} alt={image.alt} />
       <h2 className='mt-6'>{fullName}</h2>
-      <p className='text-primary-light'>{role}</p>
+      <p className='text-primary-light text-parag3'>{role}</p>
     </div>
   )
 }
 
 const Staff = ({ staff }: StaffProps) => {
   return (
-    <div className='staff pad my-32'>
-      <h1 className='mb-32'>Tvistarar</h1>
-      <div className='grid grid-cols-3 gap-6 max-w-6xl mx-auto place-items-center'>
+    <div className='staff pad my-16 desktop:my-32'>
+      <h1 className='mb-16 desktop:mb-32'>Tvistarar</h1>
+      <div className='grid grid-cols-2 desktop:grid-cols-3 gap-6 max-w-6xl mx-auto place-items-center'>
         {staff.map((employee, key) => (
           <Employee key={key} {...employee} />
         ))}

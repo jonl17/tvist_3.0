@@ -41,7 +41,7 @@
       "type": "Slices",
       "fieldset": "Slice zone",
       "config": {
-        "labels": null,
+        "labels": {},
         "choices": {
           "projects": {
             "type": "Slice",
@@ -84,7 +84,6 @@
             "fieldset": "Banner",
             "description": "Upload image to a full sized banner.",
             "icon": "beenhere",
-            "display": "list",
             "non-repeat": {
               "image": {
                 "type": "Image",
@@ -146,6 +145,45 @@
                 }
               }
             }
+          },
+          "seo": {
+            "type": "Slice",
+            "fieldset": "SEO",
+            "description": "Override default SEO here",
+            "icon": "airport_shuttle",
+            "display": "list",
+            "non-repeat": {
+              "override_title": {
+                "type": "Text",
+                "config": {
+                  "label": "override title"
+                }
+              },
+              "override_description": {
+                "type": "Text",
+                "config": {
+                  "label": "override description"
+                }
+              },
+              "override_keywords": {
+                "type": "Text",
+                "config": {
+                  "label": "override keywords"
+                }
+              },
+              "override_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": 1200,
+                    "height": 630
+                  },
+                  "thumbnails": [],
+                  "label": "override image"
+                }
+              }
+            },
+            "repeat": {}
           }
         }
       }

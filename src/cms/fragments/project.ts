@@ -18,6 +18,23 @@ export const fragment = graphql`
         url
         gatsbyImageData
       }
+      body {
+        ... on PrismicProjectDataBodyBanner {
+          ...projectBannerSliceFragment
+        }
+      }
+    }
+  }
+
+  fragment projectBannerSliceFragment on PrismicProjectDataBodyBanner {
+    id
+    slice_type
+    primary {
+      image {
+        alt
+        url
+        gatsbyImageData
+      }
     }
   }
 `
