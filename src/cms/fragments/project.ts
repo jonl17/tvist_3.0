@@ -22,7 +22,21 @@ export const fragment = graphql`
         ... on PrismicProjectDataBodyBanner {
           ...projectBannerSliceFragment
         }
+        ... on PrismicProjectDataBodyRichText {
+          ...richTextProjectSliceFragment
+        }
       }
+    }
+  }
+
+  fragment richTextProjectSliceFragment on PrismicProjectDataBodyRichText {
+    id
+    slice_type
+    primary {
+      text {
+        html
+      }
+      align
     }
   }
 

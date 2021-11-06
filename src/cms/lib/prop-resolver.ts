@@ -3,20 +3,18 @@ import { ProjectGroupsInterface } from '@src/cmp/slices/ProjectGroups'
 import { projectResolver, ProjectInterface } from '@src/data/resolvers'
 import { BannerProps } from '@cmp/slices/Banner'
 import { StaffProps } from '@cmp/slices/Staff'
+import { SliceProps } from '@src/cmp/slices/sliceZone'
+import { RichTextProps } from '@src/cmp/slices/RichText/RichText'
 
-const propResolver = (slice: {
-  slice_type: string
-  items: any[]
-  primary: any
-}) => {
+const propResolver = (slice: SliceProps) => {
   const type = slice.slice_type
   if (type === 'projects') {
-    let props: { projects: ProjectInterface[] } = {
+    const props: { projects: ProjectInterface[] } = {
       projects: slice.items.map(item => projectResolver(item.project.document)),
     }
     return props
   } else if (type === 'project_groups') {
-    let props: ProjectGroupsInterface = {
+    const props: ProjectGroupsInterface = {
       groups: slice.items.map(
         (item: any): ProjectGroupType => ({
           name: item.group.document.data.group_name.text,
@@ -28,17 +26,23 @@ const propResolver = (slice: {
     }
     return props
   } else if (type === 'banner') {
-    let props: BannerProps = {
+    const props: BannerProps = {
       image: slice.primary.image,
     }
     return props
   } else if (type === 'staff') {
-    let props: StaffProps = {
+    const props: StaffProps = {
       staff: slice.items.map(item => ({
         image: item.image,
         fullName: item.full_name,
         role: item.role,
       })),
+    }
+    return props
+  } else if (type === 'rich_text') {
+    const props: RichTextProps = {
+      text: slice.primary.text,
+      align: slice.primary.align,
     }
     return props
   } else return {}

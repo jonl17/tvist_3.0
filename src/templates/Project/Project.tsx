@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { graphql } from 'gatsby'
 import '@cms/fragments/project.ts'
 import { projectResolver } from '@src/data/resolvers'
 import { useTheme } from '@src/context/theme'
-import Img from 'gatsby-image'
-import { Fade } from 'react-reveal'
 import SliceZone from '@cmp/slices/sliceZone'
 import { linkResolver } from '@cms/utils/linkResolver'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
@@ -15,7 +13,6 @@ type Props = {
 }
 
 export const ProjectTemplate = ({ data }: Props) => {
-  const [loaded, setLoaded] = useState(false)
   if (!data) return null
   const project = projectResolver(data.prismicProject)
 
@@ -23,11 +20,10 @@ export const ProjectTemplate = ({ data }: Props) => {
 
   useEffect(() => {
     updateTheme('primary')
-    setLoaded(true)
   }, [])
 
   return (
-    <div className='project'>
+    <div className='project bg-primary-lightest'>
       <Head title={project.title} description={project.excerpt} theme='red'>
         <div className='flex text-white banner-item-width'>
           <div>
