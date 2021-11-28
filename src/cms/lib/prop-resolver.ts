@@ -54,6 +54,7 @@ const propResolver = (slice: SliceProps) => {
     return props
   } else if (type === 'hero') {
     const props: HeroTypeProps = {
+      introductionText: slice.primary.introduction_text,
       slides: slice.items.map(item => ({
         image: item.image,
         project: projectResolver(item.project.document),

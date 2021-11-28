@@ -47,6 +47,11 @@ export const fragment = graphql`
   fragment heroSliceFragment on PrismicPageDataBodyHero {
     slice_type
     id
+    primary {
+      introduction_text {
+        html
+      }
+    }
     items {
       image {
         alt

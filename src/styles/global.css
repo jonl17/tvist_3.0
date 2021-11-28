@@ -113,4 +113,8 @@
   .rich-text p {
     margin-bottom: 15px;
   }
+
+  .bg-gradient {
+    background: linear-gradient(180deg, rgba(245, 60, 90, 0) 0%, #f53c5a 100%);
+  }
 }

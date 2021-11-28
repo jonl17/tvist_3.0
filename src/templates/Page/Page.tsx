@@ -17,7 +17,7 @@ export const PageTemplate = ({ data }: Props) => {
   const page = pageResolver(data.prismicPage)
   return (
     <div className='page'>
-      <Head {...page}></Head>
+      {page.uid !== 'frontpage' && <Head {...page}></Head>}
       {page.submenu.length > 0 && <Submenu menu={page.submenu} />}
       {page.body.map((slice, key) => (
         <SliceZone key={key} slice={slice} />

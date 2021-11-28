@@ -23,7 +23,7 @@
     "theme": {
       "type": "Select",
       "config": {
-        "options": ["white", "pink", "red"],
+        "options": ["white", "pink", "red", "transparent"],
         "default_value": "white",
         "label": "Theme"
       }
@@ -191,7 +191,16 @@
             "description": "Frontpage hero carousel component",
             "icon": "airline_seat_recline_normal",
             "display": "list",
-            "non-repeat": {},
+            "non-repeat": {
+              "introduction_text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
+                  "label": "Introduction text",
+                  "placeholder": "Add your manifesto"
+                }
+              }
+            },
             "repeat": {
               "image": {
                 "type": "Image",

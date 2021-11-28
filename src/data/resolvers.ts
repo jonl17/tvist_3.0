@@ -16,7 +16,7 @@ export const menuResolver = (node: any): MenuInterface => ({
   url: node.page.url,
 })
 
-export type PageTheme = 'white' | 'pink' | 'red'
+export type PageTheme = 'white' | 'pink' | 'red' | 'transparent'
 
 export interface PageInterface {
   url: string

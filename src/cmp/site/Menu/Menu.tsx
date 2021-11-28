@@ -21,17 +21,21 @@ const Menu = ({ pages = [], theme = 'white' }: MenuProps) => {
 
   return (
     <div
-      className={cn('pad h-28 flex items-center justify-between', {
-        'bg-primary': theme === 'red',
-        'bg-white': theme === 'white',
-        'bg-primary-lightest': theme === 'pink',
-      })}
+      className={cn(
+        'pad h-28 flex items-center justify-between z-10 relative',
+        {
+          'bg-primary': theme === 'red',
+          'bg-white': theme === 'white',
+          'bg-primary-lightest': theme === 'pink',
+          'bg-transparent': theme === 'transparent',
+        }
+      )}
     >
-      <Logo ghost={theme === 'red'} />
+      <Logo ghost={theme === 'red' || theme === 'transparent'} />
       <div>
         <div className='block desktop:hidden'>
           <Burger
-            ghost={theme === 'red'}
+            ghost={theme === 'red' || theme === 'transparent'}
             isOpen={mobileMenuOpen}
             open={openMobileMenu}
             close={closeMobileMenu}
@@ -43,7 +47,7 @@ const Menu = ({ pages = [], theme = 'white' }: MenuProps) => {
               key={i}
               className={cn({
                 'mr-6': i !== pages.length - 1,
-                'text-white': theme === 'red',
+                'text-white': theme === 'red' || theme === 'transparent',
               })}
               {...page}
             />
