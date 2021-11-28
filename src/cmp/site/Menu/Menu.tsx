@@ -22,7 +22,7 @@ const Menu = ({ pages = [], theme = 'white' }: MenuProps) => {
   return (
     <div
       className={cn(
-        'pad h-28 flex items-center justify-between z-10 relative',
+        'pad h-28 flex items-center justify-between z-30 relative',
         {
           'bg-primary': theme === 'red',
           'bg-white': theme === 'white',

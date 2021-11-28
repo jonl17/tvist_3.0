@@ -7,6 +7,7 @@ import Facebook from './Facebook'
 import Instagram from './Instagram'
 import Spotify from './Spotify'
 import Ellipse from './Ellipse'
+import Arrow from './Arrow'
 
 export type IconType =
   | 'logo-main'
@@ -17,6 +18,7 @@ export type IconType =
   | 'instagram'
   | 'spotify'
   | 'ellipse'
+  | 'arrow'
 
 const AllIcons: { [key in IconType]: React.ElementType } = {
   'logo-main': LogoMain,
@@ -27,6 +29,7 @@ const AllIcons: { [key in IconType]: React.ElementType } = {
   instagram: Instagram,
   spotify: Spotify,
   ellipse: Ellipse,
+  arrow: Arrow,
 }
 
 export { AllIcons }
