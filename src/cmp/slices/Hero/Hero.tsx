@@ -29,7 +29,7 @@ const Hero = ({ slides, introductionText }: HeroTypeProps) => {
                 alt={image.alt ?? 'hero image'}
               />
             )}
-            <div className='relative h-full '>
+            <div className='absolute top-0 w-full h-full '>
               <h1 className='text-white absolute bottom-0 desktop:h-56 h-20 bg-gradient pad w-full m-0'>
                 {project.title}
               </h1>
