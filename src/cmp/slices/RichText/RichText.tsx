@@ -1,4 +1,5 @@
 import React from 'react'
+import cn from 'classnames'
 
 export type RichTextProps = {
   text: {
@@ -9,10 +10,10 @@ export type RichTextProps = {
 
 const RichText = ({ text, align }: RichTextProps) => {
   return (
-    <div className='rich-text py-8 desktop:py-32 pad flex justify-between'>
+    <div className='rich-text py-8 desktop:py-32 pad grid desktop:grid-cols-2 gap-5'>
       {align === 'right' && <span className='hidden desktop:block' />}
       <div
-        className='text-primary desktop:w-1/2'
+        className='text-primary'
         dangerouslySetInnerHTML={{ __html: text.html }}
       />
       {align === 'left' && <span className='hidden desktop:block' />}
