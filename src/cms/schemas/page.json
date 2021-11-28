@@ -41,7 +41,7 @@
       "type": "Slices",
       "fieldset": "Slice zone",
       "config": {
-        "labels": {},
+        "labels": null,
         "choices": {
           "projects": {
             "type": "Slice",
@@ -184,6 +184,32 @@
               }
             },
             "repeat": {}
+          },
+          "hero": {
+            "type": "Slice",
+            "fieldset": "Hero",
+            "description": "Frontpage hero carousel component",
+            "icon": "airline_seat_recline_normal",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              },
+              "project": {
+                "type": "Link",
+                "config": {
+                  "select": "document",
+                  "customtypes": ["project"],
+                  "label": "Project"
+                }
+              }
+            }
           }
         }
       }
