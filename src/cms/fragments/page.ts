@@ -37,6 +37,26 @@ export const fragment = graphql`
         ... on PrismicPageDataBodyStaff {
           ...staffSliceFragment
         }
+        ... on PrismicPageDataBodyHero {
+          ...heroSliceFragment
+        }
+      }
+    }
+  }
+
+  fragment heroSliceFragment on PrismicPageDataBodyHero {
+    slice_type
+    id
+    items {
+      image {
+        alt
+        url
+        gatsbyImageData
+      }
+      project {
+        document {
+          ...projectFragmentFull
+        }
       }
     }
   }

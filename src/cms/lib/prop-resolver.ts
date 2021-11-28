@@ -6,6 +6,7 @@ import { StaffProps } from '@cmp/slices/Staff'
 import { SliceProps } from '@src/cmp/slices/sliceZone'
 import { RichTextProps } from '@src/cmp/slices/RichText/RichText'
 import { ImageGridProps } from '@cmp/slices/ImageGrid/ImageGrid'
+import { HeroTypeProps } from '@cmp/slices/Hero'
 
 const propResolver = (slice: SliceProps) => {
   const type = slice.slice_type
@@ -49,6 +50,14 @@ const propResolver = (slice: SliceProps) => {
   } else if (type === 'image_grid') {
     const props: ImageGridProps = {
       images: slice.items.map(item => item.image),
+    }
+    return props
+  } else if (type === 'hero') {
+    const props: HeroTypeProps = {
+      slides: slice.items.map(item => ({
+        image: item.image,
+        project: projectResolver(item.project.document),
+      })),
     }
     return props
   } else return {}
