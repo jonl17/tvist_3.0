@@ -25,6 +25,21 @@ export const fragment = graphql`
         ... on PrismicProjectDataBodyRichText {
           ...richTextProjectSliceFragment
         }
+        ... on PrismicProjectDataBodyImageGrid {
+          ...imageGridProjectSliceFragment
+        }
+      }
+    }
+  }
+
+  fragment imageGridProjectSliceFragment on PrismicProjectDataBodyImageGrid {
+    id
+    slice_type
+    items {
+      image {
+        url
+        alt
+        gatsbyImageData
       }
     }
   }

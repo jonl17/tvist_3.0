@@ -42,7 +42,7 @@
       "type": "Slices",
       "fieldset": "Slice zone",
       "config": {
-        "labels": {},
+        "labels": null,
         "choices": {
           "rich_text": {
             "type": "Slice",
@@ -126,6 +126,24 @@
               }
             },
             "repeat": {}
+          },
+          "image_grid": {
+            "type": "Slice",
+            "fieldset": "Image grid",
+            "description": "Add multiple images",
+            "icon": "grid_on",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              }
+            }
           }
         }
       }

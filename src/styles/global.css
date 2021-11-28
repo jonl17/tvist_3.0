@@ -109,4 +109,8 @@
   .image-tall {
     height: 60vh;
   }
+
+  .rich-text p {
+    margin-bottom: 15px;
+  }
 }

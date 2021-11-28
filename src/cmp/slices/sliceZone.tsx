@@ -5,6 +5,7 @@ import ProjectGroups from '@cmp/slices/ProjectGroups'
 import Banner from '@cmp/slices/Banner'
 import Staff from '@cmp/slices/Staff'
 import RichText from '@cmp/slices/RichText'
+import ImageGrid from '@cmp/slices/ImageGrid'
 
 export type SliceType =
   | 'projects'
@@ -12,6 +13,7 @@ export type SliceType =
   | 'banner'
   | 'rich_text'
   | 'staff'
+  | 'image_grid'
 
 export type SliceProps = {
   slice_type: SliceType
@@ -26,6 +28,7 @@ const SliceZone = ({ slice }: { slice: SliceProps }) => {
     banner: Banner,
     staff: Staff,
     rich_text: RichText,
+    image_grid: ImageGrid,
   }
 
   const SliceComponent = sliceComponents[slice.slice_type]

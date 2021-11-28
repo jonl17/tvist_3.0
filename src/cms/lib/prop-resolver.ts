@@ -5,6 +5,7 @@ import { BannerProps } from '@cmp/slices/Banner'
 import { StaffProps } from '@cmp/slices/Staff'
 import { SliceProps } from '@src/cmp/slices/sliceZone'
 import { RichTextProps } from '@src/cmp/slices/RichText/RichText'
+import { ImageGridProps } from '@cmp/slices/ImageGrid/ImageGrid'
 
 const propResolver = (slice: SliceProps) => {
   const type = slice.slice_type
@@ -43,6 +44,11 @@ const propResolver = (slice: SliceProps) => {
     const props: RichTextProps = {
       text: slice.primary.text,
       align: slice.primary.align,
+    }
+    return props
+  } else if (type === 'image_grid') {
+    const props: ImageGridProps = {
+      images: slice.items.map(item => item.image),
     }
     return props
   } else return {}

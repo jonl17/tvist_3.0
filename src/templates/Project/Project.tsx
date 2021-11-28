@@ -25,7 +25,7 @@ export const ProjectTemplate = ({ data }: Props) => {
   }, [])
 
   return (
-    <div className='project bg-primary-lightest'>
+    <div className='project bg-primary-lightest mb-10'>
       <Head title={project.title} description={project.excerpt} theme='red'>
         <div className='flex text-white banner-item-width'>
           <div>
