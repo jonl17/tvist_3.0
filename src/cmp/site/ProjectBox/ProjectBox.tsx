@@ -36,7 +36,7 @@ const ProjectBox: React.FC<Props> = ({
             <GatsbyImage
               className='w-full h-full'
               image={gImage}
-              alt={image.alt}
+              alt={image.alt ?? ''}
             />
           )}
         </div>

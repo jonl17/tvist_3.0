@@ -4,7 +4,6 @@ import '@cms/fragments/project.ts'
 import { projectResolver } from '@src/data/resolvers'
 import { useTheme } from '@src/context/theme'
 import SliceZone from '@cmp/slices/sliceZone'
-import { linkResolver } from '@cms/utils/linkResolver'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import Head from '@src/cmp/site/Head'
 
@@ -14,6 +13,9 @@ type Props = {
 
 export const ProjectTemplate = ({ data }: Props) => {
   if (!data) return null
+
+  console.log(data)
+
   const project = projectResolver(data.prismicProject)
 
   const { updateTheme } = useTheme()
@@ -59,14 +61,9 @@ export const query = graphql`
   query ProjectQuery($id: String) {
     prismicProject(id: { eq: $id }) {
       _previewable
-      ...projectFragment
+      ...projectFragmentFull
     }
   }
 `
 
-export default withPrismicPreview(ProjectTemplate, [
-  {
-    repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME || '',
-    linkResolver,
-  },
-])
+export default withPrismicPreview(ProjectTemplate)

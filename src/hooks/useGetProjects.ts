@@ -7,7 +7,7 @@ const useGetProjects = (): ProjectInterface[] => {
     {
       allPrismicProject {
         nodes {
-          ...projectFragment
+          ...projectFragmentFull
         }
       }
     }

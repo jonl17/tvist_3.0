@@ -7,7 +7,7 @@ const useGetClients = (): string[] => {
     {
       allPrismicProject(sort: { fields: data___client }) {
         nodes {
-          ...projectFragment
+          ...projectFragmentFull
         }
       }
     }

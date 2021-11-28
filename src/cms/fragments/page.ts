@@ -56,7 +56,7 @@ export const fragment = graphql`
                 project {
                   document {
                     ... on PrismicProject {
-                      ...projectFragment
+                      ...projectFragmentFull
                     }
                   }
                 }
@@ -101,7 +101,7 @@ export const fragment = graphql`
       text {
         html
         text
-        raw
+        richText
       }
     }
   }
@@ -113,7 +113,7 @@ export const fragment = graphql`
       project {
         document {
           ... on PrismicProject {
-            ...projectFragment
+            ...projectFragmentFull
           }
         }
       }

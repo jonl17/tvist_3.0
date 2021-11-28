@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby'
 
 export const fragment = graphql`
-  fragment projectFragment on PrismicProject {
+  fragment projectFragmentFull on PrismicProject {
     uid
     url
     tags

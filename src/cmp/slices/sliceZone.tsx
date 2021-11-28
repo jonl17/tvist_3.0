@@ -30,6 +30,7 @@ const SliceZone = ({ slice }: { slice: SliceProps }) => {
 
   const SliceComponent = sliceComponents[slice.slice_type]
   const props = propResolver(slice)
+
   if (SliceComponent) {
     return <SliceComponent {...props} />
   }

@@ -5,7 +5,6 @@ const {
 } = require('./src/cms/prismic-config')
 
 module.exports = {
-  /* Your site config here */
   plugins: [
     gatsbySourcePrismic,
     gatsbyPrismicPreviews,
@@ -31,7 +30,8 @@ module.exports = {
         extensions: [`ts`, `tsx`],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    'gatsby-plugin-image',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
   ],
 }

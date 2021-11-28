@@ -4,7 +4,6 @@ import '@cms/fragments/page.ts'
 import SliceZone from '@cmp/slices/sliceZone'
 import { pageResolver } from '@src/data/resolvers'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
-import { linkResolver } from '@cms/utils/linkResolver'
 import Head from '@cmp/site/Head'
 import Submenu from '@cmp/site/Submenu'
 
@@ -36,9 +35,4 @@ export const query = graphql`
   }
 `
 
-export default withPrismicPreview(PageTemplate, [
-  {
-    repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME || '',
-    linkResolver,
-  },
-])
+export default withPrismicPreview(PageTemplate)
