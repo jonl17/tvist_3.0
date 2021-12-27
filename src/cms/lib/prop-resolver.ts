@@ -49,7 +49,10 @@ const propResolver = (slice: SliceProps) => {
     return props
   } else if (type === 'image_grid') {
     const props: ImageGridProps = {
-      images: slice.items.map(item => item.image),
+      media: slice.items.map(item => ({
+        image: item.image,
+        video: item.video.url ? item.video : null,
+      })),
     }
     return props
   } else if (type === 'hero') {

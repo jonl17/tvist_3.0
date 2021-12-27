@@ -61,6 +61,10 @@
   .gatsby-image-wrapper {
     @apply rounded;
   }
+
+  video {
+    @apply rounded;
+  }
 }
 
 @layer utilities {

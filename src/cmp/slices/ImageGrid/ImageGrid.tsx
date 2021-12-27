@@ -1,27 +1,34 @@
 import { ImageType } from '@src/data/resolvers'
 import React from 'react'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import cn from 'classnames'
+import Video from '@cmp/site/Video'
 
 export type ImageGridProps = {
-  images: ImageType[]
+  media: {
+    image: ImageType
+    video?: {
+      url: string
+    }
+  }[]
 }
 
-const ImageGrid = ({ images }: ImageGridProps) => {
+const ImageGrid = ({ media }: ImageGridProps) => {
   return (
     <div
       className={cn('grid pad gap-5', {
-        'desktop:grid-cols-2': images.length > 1,
+        'desktop:grid-cols-2': media.length > 1,
       })}
     >
-      {images.map((image, key) => {
-        const gatsbyImage = getImage(image.gatsbyImageData)
-        if (gatsbyImage) {
+      {media.map((item, key) => {
+        if (item.video) {
+          return <Video url={item.video.url} placeholder={item.image} />
+        } else {
           return (
             <GatsbyImage
               key={key}
-              image={gatsbyImage}
-              alt={image.alt ?? 'image grid picture'}
+              image={item.image.gatsbyImageData}
+              alt={item.image.alt ?? 'image grid picture'}
             />
           )
         }

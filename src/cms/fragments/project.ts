@@ -41,6 +41,9 @@ export const fragment = graphql`
         alt
         gatsbyImageData
       }
+      video {
+        url
+      }
     }
   }
 
