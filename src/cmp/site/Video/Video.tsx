@@ -39,7 +39,7 @@ const Video = ({ url, placeholder }: Props) => {
             image={placeholder.gatsbyImageData}
             alt={placeholder.alt ?? 'video placeholder picture'}
           />
-          <Icon className='w-40 z-10' type='play' />
+          <Icon className='w-52 z-10' type='play' />
         </button>
       )}
     </div>
