@@ -17,6 +17,7 @@ const ImageGrid = ({ media }: ImageGridProps) => {
   return (
     <div
       className={cn('grid pad gap-5', {
+        'desktop:grid-cols-1 my-5': media.length === 1,
         'desktop:grid-cols-2': media.length > 1,
       })}
     >
