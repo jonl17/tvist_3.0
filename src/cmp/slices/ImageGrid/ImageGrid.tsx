@@ -23,13 +23,16 @@ const ImageGrid = ({ media }: ImageGridProps) => {
     >
       {media.map((item, key) => {
         if (item.video) {
-          return <Video url={item.video.url} placeholder={item.image} />
+          return (
+            <Video key={key} url={item.video.url} placeholder={item.image} />
+          )
         } else {
           return (
             <GatsbyImage
               key={key}
               image={item.image.gatsbyImageData}
               alt={item.image.alt ?? 'image grid picture'}
+              className='w-full h-full'
             />
           )
         }

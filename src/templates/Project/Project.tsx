@@ -14,8 +14,6 @@ type Props = {
 export const ProjectTemplate = ({ data }: Props) => {
   if (!data) return null
 
-  console.log(data)
-
   const project = projectResolver(data.prismicProject)
 
   const { updateTheme } = useTheme()

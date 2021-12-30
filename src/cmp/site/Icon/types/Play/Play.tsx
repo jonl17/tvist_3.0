@@ -15,7 +15,7 @@ const Play = ({ ...props }) => {
             cx='51.77'
             cy='51.77'
             r='50.27'
-            stroke-width='4px'
+            strokeWidth='4px'
           />
         </g>
       </g>

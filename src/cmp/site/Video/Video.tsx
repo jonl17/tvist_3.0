@@ -26,8 +26,12 @@ const Video = ({ url, placeholder }: Props) => {
 
   return (
     <div className='relative'>
-      <button onClick={togglePlay}>
-        <video ref={videoRef} src={url}></video>
+      <button className='w-full h-full' onClick={togglePlay}>
+        <video
+          className='h-full w-full object-cover'
+          ref={videoRef}
+          src={url}
+        ></video>
       </button>
       {placeholder && !play && (
         <button
@@ -39,7 +43,7 @@ const Video = ({ url, placeholder }: Props) => {
             image={placeholder.gatsbyImageData}
             alt={placeholder.alt ?? 'video placeholder picture'}
           />
-          <Icon className='w-52 z-10' type='play' />
+          <Icon className='w-32 desktop:w-52 z-10' type='play' />
         </button>
       )}
     </div>

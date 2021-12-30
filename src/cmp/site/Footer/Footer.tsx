@@ -13,7 +13,7 @@ const Footer = () => {
         {contact.waysToContact.map((item, key) => (
           <div className='mb-10 desktop:mb-20 mt-10 w-1/2' key={key}>
             <div
-              className={cn('pt-10 border-t-2', {
+              className={cn('pt-10 border-primary border-t-2', {
                 'desktop:w-7/12': key === 0,
                 'desktop:w-6/12': key === 1,
                 'desktop:w-8/12': key === 2,
