@@ -70,7 +70,7 @@ const Hero = ({ slides, introductionText }: HeroTypeProps) => {
           className='h-full'
           style={{
             opacity: `${1 - perc * 0.02}`,
-            transform: `translate3d(0, ${perc * 4}px, 0)`,
+            transform: `translate3d(0, -${perc * 4}px, 0)`,
           }}
         >
           <h1 className='text-white absolute bottom-10 z-10'>
