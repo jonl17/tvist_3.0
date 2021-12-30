@@ -13,7 +13,11 @@ const Banner = ({ image }: BannerProps) => {
 
   return (
     <div className='banner desktop:h-screen w-full'>
-      <GatsbyImage image={gatsbyImage} alt={image.alt ?? ''} />
+      <GatsbyImage
+        className='h-full'
+        image={gatsbyImage}
+        alt={image.alt ?? ''}
+      />
     </div>
   )
 }
