@@ -41,10 +41,20 @@ module.exports = {
           from: { transform: 'translate3d(0,-100%,0)' },
           to: { transform: 'translate3d(0,0%,0)' },
         },
+        slowfade: {
+          from: { opacity: 0, transform: 'translate3d(0, 50px, 0)' },
+          to: { opacity: 1, transform: 'translate3d(0, 0, 0)' },
+        },
+        slowfadereverse: {
+          from: { opacity: 1 },
+          to: { opacity: 0 },
+        },
       },
     },
     animation: {
       slideIn: 'slideIn 0.2s ease-in-out forwards',
+      slowfade: 'slowfade 0.4s forwards',
+      slowfadereverse: 'slowfadereverse 0.4s forwards',
     },
   },
   variants: {
