@@ -53,7 +53,7 @@ const Video = ({ url, placeholder }: Props) => {
         >
           <div className='h-full w-full absolute top-0 bottom-0'>
             <GatsbyImage
-              className='w-full h-full'
+              className='w-full h-full rounded'
               image={placeholder.gatsbyImageData}
               alt={placeholder.alt ?? 'video placeholder picture'}
             />

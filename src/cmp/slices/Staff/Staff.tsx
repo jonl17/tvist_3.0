@@ -18,7 +18,7 @@ const Employee = ({ image, fullName, role }: Employee) => {
 
   return (
     <div className='mb-6'>
-      <GatsbyImage image={gImage} alt={image.alt} />
+      <GatsbyImage className='rounded' image={gImage} alt={image.alt} />
       <h2 className='mt-6'>{fullName}</h2>
       <p className='text-primary-light text-parag3'>{role}</p>
     </div>

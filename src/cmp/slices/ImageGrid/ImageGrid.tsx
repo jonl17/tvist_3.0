@@ -32,7 +32,7 @@ const ImageGrid = ({ media }: ImageGridProps) => {
               key={key}
               image={item.image.gatsbyImageData}
               alt={item.image.alt ?? 'image grid picture'}
-              className='w-full h-full'
+              className='w-full h-full rounded'
             />
           )
         }

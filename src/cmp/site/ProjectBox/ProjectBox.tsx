@@ -34,7 +34,7 @@ const ProjectBox: React.FC<Props> = ({
         <div className={cn('pr-5 pb-5 image-short')}>
           {gImage && (
             <GatsbyImage
-              className='w-full h-full'
+              className='w-full h-full rounded'
               image={gImage}
               alt={image.alt ?? ''}
             />
