@@ -32,30 +32,30 @@ const Hero = ({ slides, introductionText }: HeroTypeProps) => {
   return (
     <div>
       <div
-        className='fixed z-10 top-0 w-full flex justify-between pad'
+        className='fixed z-10 desktop:top-0 top-24 w-full flex justify-between pad pointer-events-none'
         style={{ opacity: `${1 - perc * 0.03}` }}
       >
         <button
-          className='-ml-3 flex place-items-center justify-center z-10 w-10 h-96 desktop:h-screen transform rotate-180'
+          className='pointer-events-auto -ml-3 flex place-items-center justify-center z-10 w-10 h-96 desktop:h-screen transform rotate-180'
           onClick={togglePrevious}
         >
           <Icon className='h-10' type='arrow' />
         </button>
         <button
-          className='-mr-3 w-10 flex place-items-center justify-center z-10 h-96 float-right desktop:h-screen '
+          className='pointer-events-auto -mr-3 w-10 flex place-items-center justify-center z-10 h-96 float-right desktop:h-screen '
           onClick={toggleNext}
         >
           <Icon type='arrow' />
         </button>
       </div>
-      <Link to={project.url}>
-        <div className='desktop:h-screen h-96 -mt-28 z-0 relative'>
+      <Link className='z-30' to={project.url}>
+        <div className='h-screen -mt-28 z-0 relative'>
           {gatsbyImage && (
-            <div className='fixed top-0 h-96 desktop:h-full'>
+            <div className='fixed top-0 h-full'>
               <span className='h-full w-full absolute top 0 bg-primary' />
               <div style={{ opacity: `${1 - perc * 0.015}` }}>
                 <GatsbyImage
-                  className='h-full'
+                  className='h-screen'
                   image={gatsbyImage}
                   alt={image.alt ?? 'hero image'}
                 />
@@ -65,7 +65,7 @@ const Hero = ({ slides, introductionText }: HeroTypeProps) => {
           <div className='absolute bottom-0 z-30 desktop:h-56 h-20 pad w-full m-0 flex'></div>
         </div>
       </Link>
-      <div className='h-72 -mt-72 relative w-full bg-primary bg-gradient pad'>
+      <div className='h-64 -mt-64 relative w-full bg-primary bg-gradient pad'>
         <div
           className='h-full'
           style={{
